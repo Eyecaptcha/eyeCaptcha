@@ -1,0 +1,19 @@
+/* CSS declarations go here */
+
+body {
+  font-family: Gill Sans;
+}
+.container-fluid {
+  background-color: #C62828;
+}
+
+.login-head {
+  margin: 100px 0px 50px 0px;
+}
+.logo img {
+  width: 300px;
+}
+
+.logo h1 {
+  color: white;
+}
