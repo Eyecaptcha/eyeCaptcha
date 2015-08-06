@@ -1,3 +1,5 @@
+// Registration
+
 Template.register.events({
     'submit form': function(){
         event.preventDefault();

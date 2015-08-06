@@ -25,22 +25,25 @@
     <div class="row login">
       <h2>EyeCaptcha</h2>
     </div>
-    <div class="row login-user">
-        <p><input type="text" name="username" placeholder="Username"></p>
+
+  <form class="user-login">
+    <div class="row login-email">
+        <p><input type="email" name="email" placeholder="Email Address"></p>
     </div>
     <div class="row login-pass">
         <p><input type="password" name="password" placeholder="Password"></p>
     </div>
     <div class="row login-buttons">
-      <div class="col-md-2 col-md-offset-1">
+      <div class="col-md-2">
         <a href="/register"><input type="button" name="signup" value="Signup" href="/register"></a>
       </div>
       <div class="col-md-6"></div>
       <div class="col-md-2">
         <input type="submit" name="login" value="Login">
       </div>
-      <div class="col-md-1"></div>
+      <div class="col-md-2"></div>
     </div>
+  </form>
 
     <div class="row login-help">
       <p>Forgot your password? <a href="#">Click here to reset it</a>.</p>
