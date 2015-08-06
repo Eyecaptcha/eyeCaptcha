@@ -5,14 +5,13 @@
       <div class="col-md-4"></div>
       <div class="col-md-4 logo">
         <img src="icons/EyeCaptcha.png">
-        <h1>EyeCaptcha</h1>
       </div>
       <div class="col-md-4"></div>
     </div>
 
     <div class="row">
       <div class="col-md-3"></div>
-      <div class="col-md-6 text-center login-container">
+      <div class="col-md-6">
         {{> login}}
       </div>
       <div class="col-md-3"></div>
@@ -22,9 +21,9 @@
 </body>
 
 <template name="login">
-
+  <div class="login-container text-center">
     <div class="row login">
-      <h2>Login to Web App</h2>
+      <h2>Login to EyeCaptcha</h2>
     </div>
     <div class="row login-user">
         <p><input type="text" name="login" placeholder="Username or Email"></p>
@@ -38,7 +37,7 @@
     </div>
 
     <div class="row login-help">
-      <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
+      <p>Forgot your password? <a href="#">Click here to reset it</a>.</p>
     </div>
-
+  </div>
 </template>
