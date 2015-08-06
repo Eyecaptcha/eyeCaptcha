@@ -2,6 +2,7 @@
 
 body {
   font-family: Gill Sans;
+  color: white;
 }
 .container-fluid {
   background-color: #C62828;
@@ -26,4 +27,8 @@ body {
 .img-button {
   width: 110px;
   height: 110px;
+}
+
+.row button {
+  color: white;
 }

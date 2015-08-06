@@ -2,6 +2,7 @@
 
 body {
   font-family: Gill Sans;
+  color: white;
 }
 .container-fluid {
   background-color: #C62828;
@@ -28,6 +29,6 @@ body {
   height: 110px;
 }
 
-.prompt {
-  color: white;
+.row button {
+  color: black;
 }
