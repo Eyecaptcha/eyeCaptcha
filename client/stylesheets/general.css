@@ -1,0 +1,9 @@
+/* General CSS declarations go here */
+
+body {
+  font-family: Gill Sans;
+  color: white;
+}
+.container-fluid {
+  background-color: #C62828;
+}
