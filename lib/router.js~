@@ -10,10 +10,6 @@ Router.route('/register', {
   template: 'register'
 });
 
-Router.route('/webmaster', {
-  template: 'webmasterDash'
-});
-
 Router.route('/test', {
   template: 'eyecaptcha'
 });

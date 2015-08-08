@@ -1,16 +1,12 @@
 /* EyeCaptcha Test CSS */
 
 .eyecaptcha-container {
-  margin: 0px auto 200px auto;
+  margin: 0px auto 0px auto;
   background: white;
   border-radius: 6px;
   width: 370px;
   border: 10px solid #B71C1C;
   box-shadow: 2px 2px 2px #801414;
-}
-
-.eyecaptcha-container > .row {
-  margin: 0px 0px;
 }
 
 .images {
