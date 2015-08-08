@@ -4,9 +4,17 @@
   margin: 0px auto 200px auto;
   background: white;
   border-radius: 6px;
-  width: 370px;
+  width: 650px;
   border: 10px solid #B71C1C;
   box-shadow: 2px 2px 2px #801414;
+}
+
+.webmaster-container > .row {
+  margin: 0px 0px;
+}
+
+.webmaster-container h4 {
+  font-style: bold;
 }
 
 .webmaster-buttons input {
