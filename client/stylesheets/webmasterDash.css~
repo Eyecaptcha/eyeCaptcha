@@ -43,3 +43,7 @@
   background-image: linear-gradient(to bottom, #2962FF, #2979FF);
   text-decoration: none;
 }
+
+.adName {
+  font-size: 16px;
+}
