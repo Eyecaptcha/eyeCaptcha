@@ -13,6 +13,11 @@
   margin: 0px 0px;
 }
 
+.login-head {
+  margin: 0px 0px;
+  margin-bottom: 80px;
+}
+
 .title {
   border-bottom: 1px solid #CCC;
 }

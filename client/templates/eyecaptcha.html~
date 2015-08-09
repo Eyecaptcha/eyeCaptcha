@@ -1,11 +1,22 @@
 <template name="eyecaptcha">
-
+<br>
+<div class="row">
+	<div class="col-md-9"></div>
+	
+</div>
     <div class="row text-center login-head">
       <div class="col-md-4"></div>
       <div class="col-md-4 logo">
         <img src="icons/EyeCaptcha.png">
       </div>
-      <div class="col-md-4"></div>
+      <div class="col-md-1"></div>
+	<div class="col-md-1 webmaster-buttons">
+		<button type="button" class="btn">Log Out</button>
+	</div>
+	<div class="col-md-1 webmaster-buttons">
+		<button type="button" class="btn">Dashboard</button>
+	</div>
+	<div class="col-md-1"></div>
     </div>
 
     <div class="row">
@@ -20,6 +31,9 @@
 
 <template name="eyecaptchaContainer">
 <div class="eyecaptcha-container text-center">
+<div class="title">
+	<h2>EyeCaptcha</h2>
+</div>
 <br>
   <div class="row">
     <div class="col-md-12 prompt">Select image(s) of a refreshing classic drink you can buy now for only 99 cents:</div>
