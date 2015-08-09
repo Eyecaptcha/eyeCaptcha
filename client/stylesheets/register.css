@@ -8,7 +8,7 @@
   border: 10px solid #B71C1C;
   box-shadow: 2px 2px 2px #801414;
 }
-.registration > .row {
+.userRegister > .row {
   margin: 0px 0px;
 }
 .register-container > .row {
@@ -33,16 +33,10 @@
 .row.register-buttons {
   margin-bottom: 20px;
 }
-.register-buttons input {
-  background: #2979FF;
-  background-image: -webkit-linear-gradient(top, #2979FF, #2962FF);
-  background-image: -moz-linear-gradient(top, #2979FF, #2962FF);
-  background-image: -ms-linear-gradient(top, #2979FF, #2962FF);
-  background-image: -o-linear-gradient(top, #2979FF, #2962FF);
-  background-image: linear-gradient(to bottom, #2979FF, #2962FF);
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
+.register-buttons button {
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
   color: #ffffff;
   font-size: 14px;
   padding: 5px 10px 5px 10px;
@@ -50,12 +44,6 @@
   width: 80px;
 }
 
-.register-buttons input:hover {
-  background: #2962FF;
-  background-image: -webkit-linear-gradient(top, #2962FF, #2979FF);
-  background-image: -moz-linear-gradient(top, #2962FF, #2979FF);
-  background-image: -ms-linear-gradient(top, #2962FF, #2979FF);
-  background-image: -o-linear-gradient(top, #2962FF, #2979FF);
-  background-image: linear-gradient(to bottom, #2962FF, #2979FF);
+.register-buttons button:hover {
   text-decoration: none;
 }

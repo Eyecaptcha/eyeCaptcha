@@ -1,6 +1,6 @@
 // Registration
 
-Template.register.events({
+Template.userRegister.events({
     'submit form': function(){
         event.preventDefault();
         var email = $('[name=email]').val();

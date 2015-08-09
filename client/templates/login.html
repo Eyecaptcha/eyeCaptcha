@@ -1,5 +1,5 @@
 <template name="login">
-
+  
     <div class="row text-center login-head">
       <div class="col-md-4"></div>
       <div class="col-md-4 logo">
@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6">
-        {{> loginForm}}
+        {{> userLogin}}
       </div>
       <div class="col-md-3"></div>
     </div>
@@ -19,14 +19,14 @@
 </template>
 
 
-<template name="loginForm">
+<template name="userLogin">
 
   <div class="login-container text-center">
     <div class="row login">
       <h2>EyeCaptcha</h2>
     </div>
 
-  <form class="user-login">
+  <form class="userLogin">
     <div class="row login-email">
         <p><input type="email" name="email" placeholder="Email Address"></p>
     </div>
@@ -35,11 +35,11 @@
     </div>
     <div class="row login-buttons">
       <div class="col-md-2">
-        <a href="/register"><input type="button" name="signup" value="Signup" href="/register"></a>
+        <a href="/register"><input type="button" name="signup" class="btn btn-primary" value="Signup" href="/register"></a>
       </div>
       <div class="col-md-6"></div>
       <div class="col-md-2">
-        <input type="submit" name="login" value="Login">
+        <input type="submit" name="userLogin" class="btn btn-primary" value="Login">
       </div>
       <div class="col-md-2"></div>
     </div>

@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6">
-        {{> registerForm}}
+        {{> userRegister}}
       </div>
       <div class="col-md-3"></div>
     </div>
@@ -19,14 +19,14 @@
 </template>
 
 
-<template name="registerForm">
+<template name="userRegister">
 
   <div class="register-container text-center">
     <div class="row login">
       <h2>EyeCaptcha</h2>
     </div>
-    
-  <form class="registration">
+
+  <form class="userRegister">
     <div class="row register-email">
         <p><input type="email" name="email" placeholder="Email Address"></p>
     </div>
@@ -35,7 +35,7 @@
     </div>
     <div class="row register-buttons">
       <div class="col-md-8"></div>
-      <div class="col-md-2"><input type="submit" name="register" value="Register"></div>
+      <div class="col-md-2"><input type="submit" name="userRegister" class="btn btn-primary" value="Register"></div>
       <div class="col-md-2"></div>
     </div>
   </form>

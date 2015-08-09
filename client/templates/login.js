@@ -1,6 +1,6 @@
 // Login
 
-Template.login.events({
+Template.userLogin.events({
     'submit form': function(event){
         event.preventDefault();
         var email = $('[name=email]').val();
