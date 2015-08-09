@@ -1,11 +1,22 @@
 <template name="webmasterDash">
-
+<br>
+<div class="row">
+	<div class="col-md-9"></div>
+	
+</div>
     <div class="row text-center login-head">
       <div class="col-md-4"></div>
       <div class="col-md-4 logo">
         <img src="icons/EyeCaptcha.png">
       </div>
-      <div class="col-md-4"></div>
+      <div class="col-md-1"></div>
+	<div class="col-md-1 webmaster-buttons">
+		<button type="button" class="btn">Log Out</button>
+	</div>
+	<div class="col-md-1 webmaster-buttons">
+		<button type="button" class="btn">EyeCaptcha</button>
+	</div>
+	<div class="col-md-1"></div>
     </div>
 
     <div class="row">
@@ -20,7 +31,7 @@
 
 <template name="webmasterDashContainer">
 <div class="webmaster-container">
-<div class="title">
+<div class="title text-center">
 	<h2>EyeCaptcha</h2>
 </div>
 	<h4 class="text-center">Webmaster Dashboard</h4>

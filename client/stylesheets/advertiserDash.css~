@@ -1,20 +1,20 @@
-/* EyeCaptcha Test CSS */
+/* Webmaster Dashboard CSS */
 
-.eyecaptcha-container {
+.advertiser-container {
   margin: 0px auto 200px auto;
   background: white;
   border-radius: 6px;
-  width: 370px;
+  width: 650px;
   border: 10px solid #B71C1C;
   box-shadow: 2px 2px 2px #801414;
 }
 
-.eyecaptcha-container > .row {
+.advertiser-container > .row {
   margin: 0px 0px;
 }
 
-.login-head {
-  margin: 0px 0px;
+.advertiser-container h4 {
+  font-style: bold;
 }
 
 .title {
@@ -27,17 +27,12 @@
   margin: 15px 0px 10px 0px;
 }
 
-.images {
-  max-width: 80px;
-  max-height: 80px;
-  border-radius: 5px; 
-}
-.img-button {
-  width: 90px;
-  height: 90px;
+.login-head {
+  margin: 0px 0px;
+  margin-bottom: 80px;
 }
 
-.eyecaptcha-buttons input {
+.advertiser-buttons input {
   background: #2979FF;
   background-image: -webkit-linear-gradient(top, #2979FF, #2962FF);
   background-image: -moz-linear-gradient(top, #2979FF, #2962FF);
@@ -54,7 +49,7 @@
   width: 80px;
 }
 
-.eyecaptcha-buttons input:hover {
+.advertiser-buttons input:hover {
   background: #2962FF;
   background-image: -webkit-linear-gradient(top, #2962FF, #2979FF);
   background-image: -moz-linear-gradient(top, #2962FF, #2979FF);
@@ -62,4 +57,8 @@
   background-image: -o-linear-gradient(top, #2962FF, #2979FF);
   background-image: linear-gradient(to bottom, #2962FF, #2979FF);
   text-decoration: none;
+}
+
+.websiteName {
+  font-size: 16px;
 }
