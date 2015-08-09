@@ -27,11 +27,6 @@
   margin: 15px 0px 10px 0px;
 }
 
-.login-head {
-  margin: 0px 0px;
-  margin-bottom: 80px;
-}
-
 .advertiser-buttons input {
   background: #2979FF;
   background-image: -webkit-linear-gradient(top, #2979FF, #2962FF);
@@ -62,4 +57,3 @@
 .websiteName {
   font-size: 16px;
 }
-

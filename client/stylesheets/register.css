@@ -21,6 +21,7 @@
   box-sizing: border-box;
   width: 90%;
   padding: 5px;
+  height: 30px;
 }
 .register-pass {
   padding-bottom: 10px;
@@ -29,6 +30,7 @@
   box-sizing: border-box;
   width: 90%;
   padding: 5px;
+  height: 30px;
 }
 .row.register-buttons {
   margin-bottom: 20px;

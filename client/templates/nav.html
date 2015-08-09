@@ -10,21 +10,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="icons/EyeCaptchaNav.png">EyeCaptcha</a>
+          {{> navBrand}}
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Webmaster Dashboard</a></li>
-            <li><a href="#">Advertiser Dashboard</a></li>
-            <li><a href="#">EyeCaptcha Test</a></li>
-            <input type="submit" name="logout" value="Logout">
+            {{> navItems}}
           </ul>
 
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
 
+</template>
+
+<template name="navBrand">
+  <a class="navbar-brand" href="#"><img src="icons/EyeCaptchaNav.png">EyeCaptcha</a>
+</template>
+
+<template name="navItems">
+  <li><a href="#">Webmaster Dashboard</a></li>
+  <li><a href="#">Advertiser Dashboard</a></li>
+  <li><a href="#">EyeCaptcha Test</a></li>
+  <input type="submit" class="navbar-btn btn btn-default" name="logout" value="Logout">
 </template>

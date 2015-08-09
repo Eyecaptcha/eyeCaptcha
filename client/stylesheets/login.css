@@ -35,6 +35,7 @@
   box-sizing: border-box;
   width: 90%;
   padding: 5px;
+  height: 30px;
 }
 .login-pass {
   padding-bottom: 10px;
@@ -43,6 +44,7 @@
   box-sizing: border-box;
   width: 90%;
   padding: 5px;
+  height: 30px;
 }
 .row.login-buttons {
   margin-bottom: 20px;
