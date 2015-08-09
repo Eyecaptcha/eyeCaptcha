@@ -1,7 +1,7 @@
 /* EyeCaptcha Test CSS */
 
 .eyecaptcha-container {
-  margin: 0px auto 200px auto;
+  margin: 100px auto 200px auto;
   background: white;
   border-radius: 6px;
   width: 370px;
@@ -31,7 +31,7 @@
 .images {
   max-width: 80px;
   max-height: 80px;
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 .img-button {
   width: 90px;
