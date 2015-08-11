@@ -24,7 +24,7 @@
 }
 
 .prompt {
-  margin-bottom: 20px;
+  margin: 10px 0px 20px 0px;
 }
 
 .images {
@@ -45,7 +45,7 @@
   padding: 5px 10px 5px 10px;
   text-decoration: none;
   width: 80px;
-  margin-top: 15px;
+  margin: 15px 0px;
 }
 
 .eyecaptcha-buttons button:hover {
