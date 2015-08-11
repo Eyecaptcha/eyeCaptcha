@@ -1,0 +1,55 @@
+// Nav CSS //
+
+.nav-container {
+  width: 100%;
+	float: left;
+	margin: 0 0 1em 0;
+	padding: 0;
+	background-color: white;
+	border-bottom: 5px solid #b2b2b2;
+}
+.nav-wrap {
+  width: 1200px;
+  margin: 0 auto;
+  height: 60px;
+}
+
+.nav-left {
+  float: left;
+  margin-top: 15px;
+}
+.nav-left img {
+  padding-right: 15px;
+}
+.nav-left a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #4d4d4d;
+}
+
+.nav-right {
+  float: right;
+  margin-top: 10px;
+}
+.nav-right ul {
+  list-style: none;
+}
+.nav-right li {
+	float: left;
+}
+.nav-right li a {
+  font-size: 16px;
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	color: #4d4d4d;
+}
+.nav-right li a:hover {
+	color: #C62929;
+}
+
+
+.logout {
+  margin-left: 25px;
+  margin-top: 3px;
+}

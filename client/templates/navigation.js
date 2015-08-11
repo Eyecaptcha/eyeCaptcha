@@ -1,6 +1,6 @@
 // nav
 
-Template.navBrand.events({
+Template.navItems.events({
     'click .logout': function(event){
         event.preventDefault();
         Meteor.logout();
