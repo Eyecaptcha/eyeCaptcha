@@ -96,6 +96,28 @@ for( i = 0; i < adImages; i++){
   captchaArray.push(paidImgPath);
 };
 
-// Combine the image paths into the captchaArray so the order can be shuffled
+// Shuffle the order of captchaArray
+function shuffle(captchaArray) {
+  var m = captchaArray.length, t, i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = captchaArray[m];
+    captchaArray[m] = captchaArray[i];
+    captchaArray[i] = t;
+  }
+
+  return captchaArray;
+}
 
 // Slice the array into segments of 2 so it can be displayed in the 3-row format
+var i, j, captchaRows, chunk = 2;
+
+for (i = 0, j = captchaArray.length; i <= j; i += chunk) {
+   captchaRows = captchaArray.slice ( i, i+chunk );
+}
