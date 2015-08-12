@@ -61,44 +61,39 @@ for( i = 0; i < adImages; i++){
       var randomNumber = Math.floor(Math.random() * 11) + 1;
       var imgName = "bouqs" + randomNumber;
       var paidImgPath = "img/Paid/Bouqs/" + imgName;
-      captchaArray.push(paidImgPath);
     }
   } else if (randomPrompt === prompts[1]) {
     function randomImg(){
       var randomNumber = Math.floor(Math.random() * 10) + 1;
       var imgName = "coke" + randomNumber;
       var paidImgPath = "img/Paid/CocaCola/" + imgName;
-      captchaArray.push(paidImgPath);
     }
   } else if (randomPrompt === prompts[2]) {
     function randomImg(){
       var randomNumber = Math.floor(Math.random() * 10) + 1;
       var imgName = "nike" + randomNumber;
       var paidImgPath = "img/Paid/Nike/" + imgName;
-      captchaArray.push(paidImgPath);
     }
   } else if (randomPrompt === prompts[3]) {
     function randomImg(){
       var randomNumber = Math.floor(Math.random() * 10) + 1;
       var imgName = "patagonia" + randomNumber;
       var paidImgPath = "img/Paid/Patagonia/" + imgName;
-      captchaArray.push(paidImgPath);
     }
   } else if (randomPrompt === prompts[4]) {
     function randomImg(){
       var randomNumber = Math.floor(Math.random() * 10) + 1;
       var imgName = "snickers" + randomNumber;
       var paidImgPath = "img/Paid/Snickers/" + imgName;
-      captchaArray.push(paidImgPath);
     }
   } else if (randomPrompt === prompts[5]) {
     function randomImg(){
       var randomNumber = Math.floor(Math.random() * 10) + 1;
       var imgName = "northface" + randomNumber;
       var paidImgPath = "img/Paid/NorthFace/" + imgName;
-      captchaArray.push(paidImgPath);
     }
   }
+  captchaArray.push(paidImgPath);
 };
 
 // Combine the image paths into the captchaArray so the order can be shuffled
