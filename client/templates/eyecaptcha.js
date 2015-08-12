@@ -36,7 +36,7 @@ var freeImages = captchaLimit - adImages;
 for( i = 0; i < freeImages; i++){
   function randomImg(){
     var randomNumber = Math.floor(Math.random() * 149) + 1;
-    var imgName = "img_" + randomNumber;
+    var imgName = "img" + randomNumber;
     document.getElementById("imageid").src = img/Free + "/" + imgName;
   }
 };
@@ -56,8 +56,8 @@ for( i = 0; i < adImages; i++){
   if(randomPrompt === prompts[0]){
     function randomImg(){
       var randomNumber = Math.floor(Math.random() * 149) + 1;
-      var imgName = "img_" + randomNumber;
-      document.getElementById("imageid").src = img/Free + "/" + imgName;
+      var imgName = "bouqs" + randomNumber;
+      document.getElementById("imageid").src = img/Paid/Bouqs + "/" + imgName;
     }
   } else if (randomPrompt === prompts[1]) {
     function randomImg(){
