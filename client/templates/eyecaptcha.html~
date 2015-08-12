@@ -1,73 +1,65 @@
 <template name="eyecaptcha">
-<br>
-<div class="row">
-	<div class="col-md-9"></div>
-	
-</div>
-    <div class="row text-center login-head">
-      <div class="col-md-4"></div>
-      <div class="col-md-4 logo">
-        <img src="icons/EyeCaptcha.png">
-      </div>
-      <div class="col-md-1"></div>
-	<div class="col-md-1 webmaster-buttons">
-		<button type="button" class="btn">Log Out</button>
-	</div>
-	<div class="col-md-1 webmaster-buttons">
-		<button type="button" class="btn">Dashboard</button>
-	</div>
-	<div class="col-md-1"></div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
-        {{> eyecaptchaContainer}}
-      </div>
-      <div class="col-md-3"></div>
-    </div>
+  <div class="row">
+    <div class="col-md-3"></div>
+		    <div class="col-md-6">
+        	{{> eyecaptchaContainer}}
+      	</div>
+    <div class="col-md-3"></div>
+  </div>
 
 </template>
+
 
 <template name="eyecaptchaContainer">
-<div class="eyecaptcha-container text-center">
-<div class="title">
-	<h2>EyeCaptcha</h2>
-</div>
-<br>
-  <div class="row">
-    <div class="col-md-12 prompt">Select image(s) of a refreshing classic drink you can buy now for only 99 cents:</div>
+
+  <div class="eyecaptcha-container text-center">
+
+  	<div class="title">
+  		<h2>EyeCaptcha Test</h2>
+  	</div>
+
+    <div class="row">
+      <div class="col-md-12 prompt"><!--- {{> adPrompt}} -->Select the image(s) of a refreshing classic drink you can buy now for only 99 cents:</div>
+    </div>
+
+<!---
+  {{#each imgRow}}
+    {{> adImages}}
+  {{/each}}
+-->
+  	<div class="row">
+      <div class="col-md-1"></div>
+  		<div class="col-md-10">
+  			<button type="button" class="img-button"><img class="images" src="img/coke1.jpeg"></button>
+  			<button type="button" class="img-button"><img class="images" src="img/random1.jpeg"></button>
+  		</div>
+      <div class="col-md-1"></div>
+  	</div>
+  	<div class="row">
+      <div class="col-md-1"></div>
+  		<div class="col-md-10">
+  			<button type="button" class="img-button"><img class="images" src="img/random2.jpeg"></button>
+  			<button type="button" class="img-button"><img class="images" src="img/coke3.jpeg"></button>
+  		</div>
+      <div class="col-md-1"></div>
+  	</div>
+    <div class="row">
+      <div class="col-md-1"></div>
+  		<div class="col-md-10">
+  			<button type="button" class="img-button"><img class="images" src="img/coke2.jpeg"></button>
+  			<button type="button" class="img-button"><img class="images" src="img/random3.jpeg"></button>
+  		</div>
+      <div class="col-md-1"></div>
+    </div>
+
+  	<div class="row eyecaptcha-buttons">
+  		<div class="col-md-8"></div>
+  		<div class="col-md-4">
+  			<button type="button" class="btn btn-primary">Submit</button>
+  		</div>
+  	</div>
 
   </div>
-	<div class="row">
-		<div class="col-md-4">
-			<button type="button" class="img-button"><img class="images" src="img/coke1.jpeg"></button>
-		</div>
-		<div class="col-md-4">
-			<button type="button" class="img-button"><img class="images" src="img/random1.jpeg"></button>
-		</div>
-		<div class="col-md-4">
-			<button type="button" class="img-button"><img class="images" src="img/coke2.jpeg"></button>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-			<button type="button" class="img-button"><img class="images" src="img/random2.jpeg"></button>
-		</div>
-		<div class="col-md-4">
-			<button type="button" class="img-button"><img class="images" src="img/coke3.jpeg"></button>
-		</div>
-		<div class="col-md-4">
-			<button type="button" class="img-button"><img class="images" src="img/random3.jpeg"></button>
-		</div>
-	</div>
-<br>
-	<div class="row eyecaptcha-buttons">
-		<div class="col-md-8"></div>
-		<div class="col-md-4">
-			<button type="button" class="btn btn-primary">Submit</button>
-		</div>
-	</div><br>
-</div>
-</template>
 
+</template>
