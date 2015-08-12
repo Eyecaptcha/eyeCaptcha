@@ -65,5 +65,29 @@ for( i = 0; i < adImages; i++){
       var imgName = "img_" + randomNumber;
       document.getElementById("imageid").src = img/Free + "/" + imgName;
     }
+  } else if (randomPrompt === prompts[2]) {
+    function randomImg(){
+      var randomNumber = Math.floor(Math.random() * 149) + 1;
+      var imgName = "img_" + randomNumber;
+      document.getElementById("imageid").src = img/Free + "/" + imgName;
+    }
+  } else if (randomPrompt === prompts[3]) {
+    function randomImg(){
+      var randomNumber = Math.floor(Math.random() * 149) + 1;
+      var imgName = "img_" + randomNumber;
+      document.getElementById("imageid").src = img/Free + "/" + imgName;
+    }
+  } else if (randomPrompt === prompts[4]) {
+    function randomImg(){
+      var randomNumber = Math.floor(Math.random() * 149) + 1;
+      var imgName = "img_" + randomNumber;
+      document.getElementById("imageid").src = img/Free + "/" + imgName;
+    }
+  } else if (randomPrompt === prompts[5]) {
+    function randomImg(){
+      var randomNumber = Math.floor(Math.random() * 149) + 1;
+      var imgName = "img_" + randomNumber;
+      document.getElementById("imageid").src = img/Free + "/" + imgName;
+    }
   }
 };
