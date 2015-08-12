@@ -55,39 +55,39 @@ var randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
 for( i = 0; i < adImages; i++){
   if(randomPrompt === prompts[0]){
     function randomImg(){
-      var randomNumber = Math.floor(Math.random() * 149) + 1;
+      var randomNumber = Math.floor(Math.random() * 11) + 1;
       var imgName = "bouqs" + randomNumber;
       document.getElementById("imageid").src = img/Paid/Bouqs + "/" + imgName;
     }
   } else if (randomPrompt === prompts[1]) {
     function randomImg(){
-      var randomNumber = Math.floor(Math.random() * 149) + 1;
-      var imgName = "img_" + randomNumber;
-      document.getElementById("imageid").src = img/Free + "/" + imgName;
+      var randomNumber = Math.floor(Math.random() * 10) + 1;
+      var imgName = "coke" + randomNumber;
+      document.getElementById("imageid").src = img/Paid/CocaCola + "/" + imgName;
     }
   } else if (randomPrompt === prompts[2]) {
     function randomImg(){
-      var randomNumber = Math.floor(Math.random() * 149) + 1;
-      var imgName = "img_" + randomNumber;
-      document.getElementById("imageid").src = img/Free + "/" + imgName;
+      var randomNumber = Math.floor(Math.random() * 10) + 1;
+      var imgName = "nike" + randomNumber;
+      document.getElementById("imageid").src = img/Paid/Nike + "/" + imgName;
     }
   } else if (randomPrompt === prompts[3]) {
     function randomImg(){
-      var randomNumber = Math.floor(Math.random() * 149) + 1;
-      var imgName = "img_" + randomNumber;
-      document.getElementById("imageid").src = img/Free + "/" + imgName;
+      var randomNumber = Math.floor(Math.random() * 10) + 1;
+      var imgName = "patagonia" + randomNumber;
+      document.getElementById("imageid").src = img/Paid/Patagonia + "/" + imgName;
     }
   } else if (randomPrompt === prompts[4]) {
     function randomImg(){
-      var randomNumber = Math.floor(Math.random() * 149) + 1;
-      var imgName = "img_" + randomNumber;
-      document.getElementById("imageid").src = img/Free + "/" + imgName;
+      var randomNumber = Math.floor(Math.random() * 10) + 1;
+      var imgName = "snickers" + randomNumber;
+      document.getElementById("imageid").src = img/Paid/Snickers + "/" + imgName;
     }
   } else if (randomPrompt === prompts[5]) {
     function randomImg(){
-      var randomNumber = Math.floor(Math.random() * 149) + 1;
-      var imgName = "img_" + randomNumber;
-      document.getElementById("imageid").src = img/Free + "/" + imgName;
+      var randomNumber = Math.floor(Math.random() * 10) + 1;
+      var imgName = "northface" + randomNumber;
+      document.getElementById("imageid").src = img/Paid/NorthFace + "/" + imgName;
     }
   }
 };
