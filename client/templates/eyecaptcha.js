@@ -1,21 +1,22 @@
 // EyeCaptcha Test Page
 
-Template.eyecaptchaContainer.events({
-    'click .img-button': function(event){
-        event.preventDefault();
-	//alert(event.target.id);
-	alert(event.target.id);
-        //record picked image
-    }
-
-
-});
+// Template.eyecaptchaContainer.events({
+//     'click .img-button': function(event){
+//         event.preventDefault();
+// 	alert(event.target.id);
+//         //record picked image
+//     }
+// });
 
 var paidCount = 0;
+var checkCount = 0;
+var adCount = 0;
 // Wrap all of the EyeCaptcha Test code in a click function
+
 Template.eyecaptchaContainer.events({
 	'click #generateTest': function(event){
 		event.preventDefault();
+
     // Reset paidCount and selectedImages array
     Session.set('selectedImages', []);
     paidCount=0;
@@ -52,6 +53,7 @@ Template.eyecaptchaContainer.events({
           "Never stop exploring. Select the images of the jacket that you can take on any expedition, now available from North Face."]
 
           var randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+
           // Display the prompt in promptBox
           document.getElementById('promptBox').innerHTML = randomPrompt;
 
@@ -84,6 +86,7 @@ Template.eyecaptchaContainer.events({
             }
             captchaArray.push(paidImgPath);
           };
+
           // Shuffle the order of captchaArray - source-code can be found here: http://bost.ocks.org/mike/shuffle/
             var m = captchaArray.length, t, i;
 
@@ -137,7 +140,16 @@ Template.eyecaptchaContainer.events({
 
     Session.set('selectedImages', selectedImages);
     console.log(Session.get('selectedImages'));
+    selectedImages.length = checkCount;
+    console.log(checkCount);
+  },
 
+});
+
+Template.eyecaptchaContainer.events({
+  'click #submitTest': function(event){
+    if (checkCount == adCount){
+      console.log("SUCCESS!");
+    }
   }
-
 });
