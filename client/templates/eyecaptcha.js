@@ -58,6 +58,8 @@ function EyeCaptchaTest(){
   "Never stop exploring. Select the images of the jacket that you can take on any expedition, now available from North Face."]
 
   var randomPrompt = prompts[Math.floor(Math.random() * prompts.length)];
+  // Display the prompt in promptBox
+  document.getElementById('promptBox').innerHTML = randomPrompt;
 
   // Generate the correct amount of random images from the paid images
   for( i = 0; i < adImages; i++){
