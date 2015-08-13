@@ -96,20 +96,23 @@ Template.eyecaptchaContainer.events({
               captchaArray[i] = t;
             }
 
+          // Loop through the array to add .src to images and check whether they are free or paid
+          var freeClass = " freeImg";
+          var paidClass = " paidImg";
 
-          document.getElementById("imageid1").src = captchaArray[0]
-          document.getElementById("imageid2").src = captchaArray[1]
-          document.getElementById("imageid3").src = captchaArray[2]
-          document.getElementById("imageid4").src = captchaArray[3]
-          document.getElementById("imageid5").src = captchaArray[4]
-          document.getElementById("imageid6").src = captchaArray[5]
-          // Slice the array into segments of 2 so it can be displayed in the 3-row format
-        //  var i, j, captchaRows, chunk = 2;
+          for( j = 0, i = 1; i <= captchaLimit; i++, j++ ) {
+            document.getElementById("imageid" + i).src = captchaArray[j];
+            if(captchaArray[j].indexOf('/Free') > -1) {
+              var d = document.getElementById("button" + i);
+              d.className = d.className + freeClass;
+            } else {
+              var d = document.getElementById("button" + i);
+              d.className = d.className + paidClass;
+            }
+          };
 
-        //  for (i = 0, j = captchaArray.length; i <= j; i += chunk) {
-        //     captchaRows = captchaArray.slice ( i, i+chunk );
-        //  }
+          // Check how many of each button are selected. If # of paidImg buttons = # of adImages, test is successful.
+          var paidCount = 0;
 
 	}
 });
-//document.getElementById("generateTest").onclick = EyeCaptchaTest;
