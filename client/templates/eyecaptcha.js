@@ -11,11 +11,14 @@ Template.eyecaptchaContainer.events({
 
 });
 
+var paidCount = 0;
 // Wrap all of the EyeCaptcha Test code in a click function
 Template.eyecaptchaContainer.events({
 	'click #generateTest': function(event){
 		event.preventDefault();
-		//alert("Submission attempt.")
+    // Reset paidCount and selectedImages array
+    Session.set('selectedImages', []);
+    paidCount=0;
 
           // Declare captchaArray variable to be used later
           var captchaArray = [];
@@ -103,16 +106,38 @@ Template.eyecaptchaContainer.events({
           for( j = 0, i = 1; i <= captchaLimit; i++, j++ ) {
             document.getElementById("imageid" + i).src = captchaArray[j];
             if(captchaArray[j].indexOf('/Free') > -1) {
+              document.getElementById("button" + i).className = "";
+              document.getElementById("button" + i).className = "img-button";
               var d = document.getElementById("button" + i);
               d.className = d.className + freeClass;
             } else {
+              document.getElementById("button" + i).className = "";
+              document.getElementById("button" + i).className = "img-button";
               var d = document.getElementById("button" + i);
               d.className = d.className + paidClass;
             }
           };
 
           // Check how many of each button are selected. If # of paidImg buttons = # of adImages, test is successful.
-          var paidCount = 0;
 
-	}
+          // for ( var i = 1; i <= captchaLimit; i++ ) {
+          //   document.getElementsByClassName('paidImg').onClick(paidCount++);
+          // }
+
+	},
+
+  'click .paidImg': function(event, template) {
+
+    var selectedImageId = event.target.id
+    var selectedImages = Session.get('selectedImages');
+
+    if (selectedImages.indexOf(selectedImageId) == -1) {
+      selectedImages.push(event.target.id);
+    }
+
+    Session.set('selectedImages', selectedImages);
+    console.log(Session.get('selectedImages'));
+
+  }
+
 });
