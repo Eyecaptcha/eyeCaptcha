@@ -9,7 +9,6 @@
 // });
 
 var paidCount = 0;
-var checkCount = 0;
 var adCount = 0;
 // Wrap all of the EyeCaptcha Test code in a click function
 
@@ -31,6 +30,7 @@ Template.eyecaptchaContainer.events({
 
           // adImages variable calls randomIntFromInterval function with values 1, 6
           var adImages = randomIntFromInterval(1,6);
+          adCount = adImages;
 
           // Declare limit of images to 6, calculate # of freeImages
           var captchaLimit = 6;
@@ -140,16 +140,21 @@ Template.eyecaptchaContainer.events({
 
     Session.set('selectedImages', selectedImages);
     console.log(Session.get('selectedImages'));
-    selectedImages.length = checkCount;
-    console.log(checkCount);
+
   },
 
 });
 
+
 Template.eyecaptchaContainer.events({
   'click #submitTest': function(event){
-    if (checkCount == adCount){
+    var checkCount = Session.get('selectedImages');
+    // console.log(checkCount);
+    // console.log(adCount);
+    if (checkCount.length == adCount) {
       console.log("SUCCESS!");
+    } else {
+      console.log("FAILURE!");
     }
   }
 });
