@@ -122,11 +122,17 @@ function EyeCaptchaTest(){
     return captchaArray;
   }
 
+  document.getElementById("imageid1").src = captchaArray[0]
+  document.getElementById("imageid2").src = captchaArray[1]
+  document.getElementById("imageid3").src = captchaArray[2]
+  document.getElementById("imageid4").src = captchaArray[3]
+  document.getElementById("imageid5").src = captchaArray[4]
+  document.getElementById("imageid6").src = captchaArray[5]
   // Slice the array into segments of 2 so it can be displayed in the 3-row format
-  var i, j, captchaRows, chunk = 2;
+//  var i, j, captchaRows, chunk = 2;
 
-  for (i = 0, j = captchaArray.length; i <= j; i += chunk) {
-     captchaRows = captchaArray.slice ( i, i+chunk );
-  }
+//  for (i = 0, j = captchaArray.length; i <= j; i += chunk) {
+//     captchaRows = captchaArray.slice ( i, i+chunk );
+//  }
 
 }
