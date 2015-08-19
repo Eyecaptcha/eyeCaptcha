@@ -7,3 +7,12 @@ body {
 .container-fluid {
   background-color: #2196F3;
 }
+
+.btn-primary {
+  background-color: #FF9100;
+  border-color: #FFAB40;
+}
+.btn-primary:hover {
+  background-color: #FF6D00;
+  border-color: #FF9100;
+}
