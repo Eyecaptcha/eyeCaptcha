@@ -10,6 +10,7 @@
 
 var paidCount = 0;
 var adCount = 0;
+var correct = true;
 // Wrap all of the EyeCaptcha Test code in a click function
 
 Template.eyecaptchaContainer.events({
@@ -143,6 +144,18 @@ Template.eyecaptchaContainer.events({
 
   },
 
+  'click .freeImg': function(event) {
+
+    correct=false;
+    console.log('Free image clicked');
+
+  },
+
+  'click .img-button': function(event) {
+	event.className = 'selected';
+	console.log('clicked');
+  },
+
 });
 
 
@@ -151,10 +164,11 @@ Template.eyecaptchaContainer.events({
     var checkCount = Session.get('selectedImages');
     // console.log(checkCount);
     // console.log(adCount);
-    if (checkCount.length == adCount) {
+    if ((checkCount.length == adCount) && (correct == true)) {
       console.log("SUCCESS!");
     } else {
       console.log("FAILURE!");
     }
+    correct = true;
   }
 });

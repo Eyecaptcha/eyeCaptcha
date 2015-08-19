@@ -4,9 +4,9 @@
   margin: 100px auto 200px auto;
   background: white;
   border-radius: 6px;
-  width: 350px;
-  border: 10px solid #B71C1C;
-  box-shadow: 2px 2px 2px #801414;
+  width: 500px;
+  border: 10px solid #2962FF;
+  box-shadow: 2px 2px 2px #1A237E;
 }
 
 .eyecaptcha-container > .row {
@@ -38,6 +38,10 @@
   height: 110px;
   padding: 0;
   margin-bottom: 3px;
+}
+
+.selected {
+  background-color: #2196F3;
 }
 
 .eyecaptcha-buttons button {

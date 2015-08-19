@@ -1,19 +1,15 @@
 /* EyeCaptcha Test CSS */
 
 .eyecaptcha-container {
-  margin: 0px auto 200px auto;
+  margin: 100px auto 200px auto;
   background: white;
   border-radius: 6px;
-  width: 370px;
-  border: 10px solid #B71C1C;
-  box-shadow: 2px 2px 2px #801414;
+  width: 500px;
+  border: 10px solid #2962FF;
+  box-shadow: 2px 2px 2px #1A237E;
 }
 
 .eyecaptcha-container > .row {
-  margin: 0px 0px;
-}
-
-.login-head {
   margin: 0px 0px;
 }
 
@@ -27,39 +23,32 @@
   margin: 15px 0px 10px 0px;
 }
 
-.images {
-  max-width: 80px;
-  max-height: 80px;
-  border-radius: 5px; 
-}
-.img-button {
-  width: 90px;
-  height: 90px;
+.prompt {
+  margin: 10px 0px 20px 0px;
+  height: 50px;
 }
 
-.eyecaptcha-buttons input {
-  background: #2979FF;
-  background-image: -webkit-linear-gradient(top, #2979FF, #2962FF);
-  background-image: -moz-linear-gradient(top, #2979FF, #2962FF);
-  background-image: -ms-linear-gradient(top, #2979FF, #2962FF);
-  background-image: -o-linear-gradient(top, #2979FF, #2962FF);
-  background-image: linear-gradient(to bottom, #2979FF, #2962FF);
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
+.images {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+.img-button {
+  width: 110px;
+  height: 110px;
+  padding: 0;
+  margin-bottom: 3px;
+}
+
+.eyecaptcha-buttons button {
   color: #ffffff;
   font-size: 14px;
   padding: 5px 10px 5px 10px;
   text-decoration: none;
   width: 80px;
+  margin: 15px 0px;
 }
 
-.eyecaptcha-buttons input:hover {
-  background: #2962FF;
-  background-image: -webkit-linear-gradient(top, #2962FF, #2979FF);
-  background-image: -moz-linear-gradient(top, #2962FF, #2979FF);
-  background-image: -ms-linear-gradient(top, #2962FF, #2979FF);
-  background-image: -o-linear-gradient(top, #2962FF, #2979FF);
-  background-image: linear-gradient(to bottom, #2962FF, #2979FF);
+.eyecaptcha-buttons button:hover {
   text-decoration: none;
 }

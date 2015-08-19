@@ -45,7 +45,7 @@
 	color: #4d4d4d;
 }
 .nav-right li a:hover {
-	color: #2962FF;
+	color: #2196F3;
 }
 
 

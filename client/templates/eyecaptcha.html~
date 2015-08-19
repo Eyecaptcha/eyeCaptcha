@@ -20,46 +20,68 @@
   	</div>
 
     <div class="row">
-      <div class="col-md-12 prompt"><!--- {{> adPrompt}} -->Select the image(s) of a refreshing classic drink you can buy now for only 99 cents:</div>
+      <div class="col-md-12 prompt">{{> adPrompt}}</div>
     </div>
 
-<!---
-  {{#each imgRow}}
-    {{> adImages}}
-  {{/each}}
--->
   	<div class="row">
       <div class="col-md-1"></div>
   		<div class="col-md-10">
-  			<button type="button" class="img-button"><img class="images" src="img/coke1.jpeg"></button>
-  			<button type="button" class="img-button"><img class="images" src="img/random1.jpeg"></button>
+  			{{> img11}}
+        {{> img12}}
+	{{> img21}}
   		</div>
       <div class="col-md-1"></div>
   	</div>
   	<div class="row">
       <div class="col-md-1"></div>
   		<div class="col-md-10">
-  			<button type="button" class="img-button"><img class="images" src="img/random2.jpeg"></button>
-  			<button type="button" class="img-button"><img class="images" src="img/coke3.jpeg"></button>
+        {{> img22}}
+	{{> img31}}
+        {{> img32}}
   		</div>
       <div class="col-md-1"></div>
   	</div>
-    <div class="row">
-      <div class="col-md-1"></div>
-  		<div class="col-md-10">
-  			<button type="button" class="img-button"><img class="images" src="img/coke2.jpeg"></button>
-  			<button type="button" class="img-button"><img class="images" src="img/random3.jpeg"></button>
-  		</div>
-      <div class="col-md-1"></div>
-    </div>
 
   	<div class="row eyecaptcha-buttons">
-  		<div class="col-md-8"></div>
   		<div class="col-md-4">
-  			<button type="button" class="btn btn-primary submit">Submit</button>
+        <button type="button" class="btn btn-primary generate" id="generateTest">Generate</button>
+      </div>
+      <div class="col-md-4"></div>
+  		<div class="col-md-4">
+  			<button type="button" class="btn btn-primary submit" id="submitTest">Submit</button>
   		</div>
   	</div>
 
   </div>
 
+</template>
+
+
+<template name="adPrompt">
+  <p id="promptBox"></p>
+</template>
+
+
+<template name="img11">
+  <button type="button" id="button1" class="img-button"><img class="images" id="imageid1" src=""></button>
+</template>
+
+<template name="img12">
+  <button type="button" id="button2" class="img-button"><img class="images" id="imageid2" src=""></button>
+</template>
+
+<template name="img21">
+  <button type="button" id="button3" class="img-button"><img class="images" id="imageid3" src=""></button>
+</template>
+
+<template name="img22">
+  <button type="button" id="button4" class="img-button"><img class="images" id="imageid4" src=""></button>
+</template>
+
+<template name="img31">
+  <button type="button" id="button5" class="img-button"><img class="images" id="imageid5" src=""></button>
+</template>
+
+<template name="img32">
+  <button type="button" id="button6" class="img-button"><img class="images" id="imageid6" src=""></button>
 </template>
