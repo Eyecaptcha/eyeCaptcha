@@ -14,3 +14,7 @@ jquery
 less
 nemo64:bootstrap
 email
+cfs:standard-packages
+cfs:gridfs
+cfs:s3
+cfs:filesystem

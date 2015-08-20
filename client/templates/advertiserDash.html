@@ -11,105 +11,104 @@
 </template>
 
 <template name="advertiserDashContainer">
-<div class="advertiser-container">
-<div class="title text-center">
-	<h2>Advertiser Dashboard</h2>
-</div>
-  <div class="row">
-    <div class="col-md-3"><h4>Cost: $25.00</h4></div>
-    <div class="col-md-9"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">
-	<h4>Websites:</h4>
-    </div>
-    <div class="col-md-9"></div>
-  </div>
-	{{> website}}
-<br>
-<div class="row">
-	<div class="col-md-4"><h4>Keywords: </h4></div>
-	<div class="col-md-7">
-		<textarea class="form-control" rows="3"></textarea>
-	</div>
-	<div class="col-md-1"></div>
-</div>
-<br>
-<div class="row">
-    <div class="col-md-5">
-	<h4>Current EyeCaptchas:</h4>
-    </div>
 
-</div>
-<div class="row">
-	<div class="col-md-12">
-		Refreshing classic drink you can buy now for only 99 cents
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-2">
-		<img src="img/coke1.jpeg" class="images">
-	</div>
-	<div class="col-md-2 img-button">
-		<img src="img/coke2.jpeg" class="images">
-	</div>
-	<div class="col-md-2 img-button">
-		<img src="img/coke3.jpeg" class="images">
-	</div>
-</div>
-<div class="row">
-    <div class="col-md-5">
-	<h4>Add new EyeCaptcha:</h4>
+  <div class="advertiser-container">
+  <div class="title text-center">
+  	<h2>Advertiser Dashboard</h2>
+  </div>
+    <div class="row">
+      <div class="col-md-3"><h4>Cost: $25.00</h4></div>
+      <div class="col-md-9"></div>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-3">
-	<h5>Select Image:</h5>
+    <div class="row">
+      <div class="col-md-3">
+  	<h4>Websites:</h4>
+      </div>
+      <div class="col-md-9"></div>
     </div>
-    <div class="col-md-9">
-	<div class="input-group">
-      <input type="text" class="form-control" placeholder="Select Image...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Select</button>
-      </span>
-    </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-3">
-	<h5>Enter Prompt:</h5>
-    </div>
-    <div class="col-md-9">
-      <input type="text" class="form-control" placeholder="Enter Prompt...">
-    </div>
-</div>
-<br>
-<div class = "row">
-	<div class="col-md-9"></div>
-	<div class="col-md-3 advertiser-buttons">
-		<button type="button" class="btn btn-primary">Save</button>
-	</div>
-</div>
-<br>
-</div>
+  	{{> website}}
+  <br>
+  <div class="row">
+  	<div class="col-md-4"><h4>Keywords: </h4></div>
+  	<div class="col-md-7">
+  		<textarea class="form-control" rows="3"></textarea>
+  	</div>
+  	<div class="col-md-1"></div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-md-5">
+  	<h4>Current EyeCaptchas:</h4>
+      </div>
+
+  </div>
+  <div class="row">
+  	<div class="col-md-12">
+  		Refreshing classic drink you can buy now for only 99 cents
+  	</div>
+  </div>
+  <div class="row">
+  	<div class="col-md-2">
+  		<img src="img/coke1.jpeg" class="images">
+  	</div>
+  	<div class="col-md-2 img-button">
+  		<img src="img/coke2.jpeg" class="images">
+  	</div>
+  	<div class="col-md-2 img-button">
+  		<img src="img/coke3.jpeg" class="images">
+  	</div>
+  </div>
+  <div class="row">
+      <div class="col-md-5">
+  	<h4>Add new EyeCaptcha:</h4>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3">
+  	<h5>Select Image:</h5>
+      </div>
+      <div class="col-md-9">
+  	<div class="input-group">
+        <input type="text" class="form-control" placeholder="Select Image...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Select</button>
+        </span>
+      </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3">
+  	<h5>Enter Prompt:</h5>
+      </div>
+      <div class="col-md-9">
+        <input type="text" class="form-control" placeholder="Enter Prompt...">
+      </div>
+  </div>
+  <br>
+  <div class = "row">
+  	<div class="col-md-9"></div>
+  	<div class="col-md-3 advertiser-buttons">
+  		<button type="button" class="btn btn-primary">Save</button>
+  	</div>
+  </div>
+  <br>
+  </div>
+
 </template>
 
 <template name="website">
-<div class="row">
-	<div class="col-md-4">
-		<h5 class="websiteName">Website Name</h5>
 
-	</div>
+  <div class="row">
+  	<div class="col-md-4">
+  		<h5 class="websiteName">Image Upload</h5>
+
+  	</div>
   </div>
-<div class="row">
-			<div class="col-md-4">
-				Solved: 100
-			</div>
-			<div class="col-md-4">
-				Cost: $25.00
-			</div>
-			<div class="col-md-4">
-				Content: Fishing
-			</div>
-</div>
+
+  <div class="row">
+    <form class="myForm">
+      <input type="file" class="myFileInput">
+    </form>
+  </div>
+
 </template>
