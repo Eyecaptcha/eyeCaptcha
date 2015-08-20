@@ -11,12 +11,12 @@
 var paidCount = 0;
 var adCount = 0;
 var correct = true;
+var selected = false;
 // Wrap all of the EyeCaptcha Test code in a click function
 
 Template.eyecaptchaContainer.events({
 	'click #generateTest': function(event){
 		event.preventDefault();
-
     // Reset paidCount and selectedImages array
     Session.set('selectedImages', []);
     paidCount=0;
@@ -151,24 +151,41 @@ Template.eyecaptchaContainer.events({
 
   },
 
-  'click .img-button': function(event) {
-	event.className = 'selected';
-	console.log('clicked');
-  },
 
 });
 
 
 Template.eyecaptchaContainer.events({
+  'click .img-button': function(event) {
+	if (event.target.style.backgroundColor == "#2196F3"){
+		console.log('unclicked');
+		event.target.style.backgroundColor = "#ffffff";
+	}
+	else {
+		console.log('clicked');
+		event.target.style.backgroundColor = "#2196F3";
+		event.target.style.borderRadius = "5px";
+		event.target.className = "selected";
+	}
+  },
+
+  'click .selected': function(event) {
+	event.target.style.backgroundColor == "#ffffff";
+	
+  },
+
   'click #submitTest': function(event){
     var checkCount = Session.get('selectedImages');
     // console.log(checkCount);
     // console.log(adCount);
     if ((checkCount.length == adCount) && (correct == true)) {
       console.log("SUCCESS!");
+      alert("The test was passed.");
     } else {
       console.log("FAILURE!");
+      alert("The test was failed."); 
     }
     correct = true;
+    document.location.reload(true);
   }
 });
