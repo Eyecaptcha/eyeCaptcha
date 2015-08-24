@@ -24,3 +24,7 @@ body {
   background-color: #FF6D00;
   border-color: #FF9100;
 }
+
+button {
+  width: 80px;
+}

@@ -8,7 +8,6 @@
 //     }
 // });
 
-var paidCount = 0;
 var adCount = 0;
 var correct = true;
 var selected = false;
@@ -17,9 +16,8 @@ var selected = false;
 Template.eyecaptchaContainer.events({
 	'click #generateTest': function(event){
 		event.preventDefault();
-    // Reset paidCount and selectedImages array
+    // Reset selectedImages array
     Session.set('selectedImages', []);
-    paidCount=0;
 
           // Declare captchaArray variable to be used later
           var captchaArray = [];
@@ -121,12 +119,6 @@ Template.eyecaptchaContainer.events({
               d.className = d.className + paidClass;
             }
           };
-
-          // Check how many of each button are selected. If # of paidImg buttons = # of adImages, test is successful.
-
-          // for ( var i = 1; i <= captchaLimit; i++ ) {
-          //   document.getElementsByClassName('paidImg').onClick(paidCount++);
-          // }
 
 	},
 

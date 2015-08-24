@@ -1,0 +1,16 @@
+.free-container {
+  margin: 150px auto 500px auto;
+  background: white;
+  border-radius: 6px;
+  width: 500px;
+  border: 10px solid #1E88E5;
+  box-shadow: 2px 2px 2px #0D47A1;
+}
+
+.free-img {
+  margin: 40px 0px 20px 0px;
+}
+
+#submitFree {
+  margin: 0px 0px 20px 0px;
+}
