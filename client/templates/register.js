@@ -7,6 +7,6 @@ Template.userRegister.events({
             email: email,
             password: password
         });
-      Router.go('eyecaptcha')
+      Router.go('/test')
     }
 });

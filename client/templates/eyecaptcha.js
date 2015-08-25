@@ -1,16 +1,11 @@
-// EyeCaptcha Test Page
-
-// Template.eyecaptchaContainer.events({
-//     'click .img-button': function(event){
-//         event.preventDefault();
-// 	alert(event.target.id);
-//         //record picked image
-//     }
-// });
+// Set variables to start, correct and selected are possibly redundant
 
 var adCount = 0;
 var correct = true;
 var selected = false;
+var freeCount = Free.find().count();
+console.log(freeCount);
+
 // Wrap all of the EyeCaptcha Test code in a click function
 
 Template.eyecaptchaContainer.events({
@@ -36,10 +31,12 @@ Template.eyecaptchaContainer.events({
           var freeImages = captchaLimit - adImages;
 
           // Generate the correct amount of random images from the free images
-          for( i = 0; i < freeImages; i++ ){
-              var randomNumber = Math.floor(Math.random() * 149) + 1;
-              var imgName = "img" + randomNumber;
-              var imgPath = "/img/Free/" + imgName + ".jpg";
+          for( i = 0; i < freeImages; i++ ) {
+              // var randomNumber = Math.floor(Math.random() * 149) + 1;
+              // var imgName = "img" + randomNumber;
+              // var imgPath = "/img/Free/" + imgName + ".jpg";
+							var randomNumber = Math.floor(Math.random() * freeCount) + 1;
+							var imgPath = Free.findOne().skip(randomNumber).next();
               captchaArray.push(imgPath);
           };
 
