@@ -20,22 +20,30 @@
   	</div>
 
     <div class="row free-img">
-      <div class="col-md-3">
-    	   <h5>Select Images:</h5>
-      </div>
-      <div class="col-md-9">
-        <form class="free-img-upload">
-          <input type="file" class="form-control" id="freeUpload" placeholder="Select Images..." multiple>
-        </form>
+      <div class="col-md-12">
+        {{> freeUpload}}
       </div>
     </div>
 
-    <div class="row free-submit">
-      <div class="col-md-offset-8 col-md-4">
-        <button type="button" class="btn btn-primary submit" id="submitFree">Submit</button>
-      </div>
+    <div class="row img-display">
+      {{> imgDisplay}}
     </div>
 
   </div>
+
+</template>
+
+<template name="freeUpload">
+
+  <form class="freeUpload">
+    <input type="file" class="form-control img-submit" id="freeUpload" placeholder="Select Images..." multiple>
+    <button type="button" class="btn btn-primary submit submitFree">Submit</button>
+  </form>
+
+</template>
+
+<template name="imgDisplay">
+
+  <img src="{{avatar}}">
 
 </template>

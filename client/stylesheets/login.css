@@ -31,7 +31,7 @@
 .login-user {
   padding: 20px 0px 5px 0px;
 }
-.login-user input[type="text"] {
+.login-user input[type="email"] {
   box-sizing: border-box;
   width: 90%;
   padding: 5px;

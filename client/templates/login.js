@@ -3,9 +3,9 @@
 Template.userLogin.events({
     'submit form': function(event){
         event.preventDefault();
-        var username = $('[name=username]').val();
+        var email = $('[name=email]').val();
         var password = $('[name=password]').val();
-        Meteor.loginWithPassword(username, password, function(error){
+        Meteor.loginWithPassword(email, password, function(error){
           if(error){
             console.log(error.reason);
           } else {
