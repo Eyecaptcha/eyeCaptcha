@@ -20,7 +20,7 @@
 	<div class="panel panel-default profit-panel">
   		<div class="panel-body">
 			<!--profit goes here.-->
-    			<h4>Overall Profit: $12.00</h4>
+    			<h4>Overall Profit: $30.00</h4>
   		</div>
 	</div>
     </div>
@@ -78,7 +78,7 @@
 				Solved: 100
 			</div>
 			<div class="col-md-4 lineup">
-				Paying: $10.00
+				Paying: $25.00
 			</div>
 			<div class="col-md-4 lineup">
 				Content: Soda, soft drink
@@ -98,7 +98,7 @@
 				Solved: 20
 			</div>
 			<div class="col-md-4 lineup">
-				Paying: $2.00
+				Paying: $5.00
 			</div>
 			<div class="col-md-4 lineup">
 				Content: Shoes, fashion
