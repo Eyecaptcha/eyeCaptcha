@@ -12,11 +12,11 @@
 // });
 
 Template.freeUpload.events({
-  'change .imgSubmit': function(event, template) {
-    FS.Utility.eachFile(event, function(file) {
-      Free.insert(file, function (err, fileObj) {
-        //Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
-      });
-    });
-  }
+	'change .imgSubmit': function(event, template) {
+		FS.Utility.eachFile(event, function(file) {
+			Free.insert(file, function (err, fileObj) {
+				//Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
+			});
+		});
+	}
 });
