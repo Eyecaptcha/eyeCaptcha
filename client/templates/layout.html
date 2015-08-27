@@ -1,10 +1,10 @@
 <template name="layout">
-  {{#if currentUser}}
-    <header>
-      {{> nav}}
-    </header>
-  {{/if}}
-  <div class="container-fluid">
-    {{> yield}}
-  </div>
+	{{#if currentUser}}
+		<header>
+			{{> nav}}
+		</header>
+	{{/if}}
+		<div class="container-fluid">
+			{{> yield}}
+		</div>
 </template>

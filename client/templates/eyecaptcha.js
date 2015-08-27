@@ -15,6 +15,7 @@ console.log(freeCount);
 Template.eyecaptchaContainer.events({
 	'click #generateTest': function(event){
 		event.preventDefault();
+		
     // Reset selectedImages array
     Session.set('selectedImages', []);
 
@@ -130,63 +131,59 @@ Template.eyecaptchaContainer.events({
 
 	},
 
-  'click .paidImg': function(event, template) {
+	'click .paidImg': function(event, template) {
 
-    var selectedImageId = event.target.id
-    var selectedImages = Session.get('selectedImages');
+		var selectedImageId = event.target.id
+		var selectedImages = Session.get('selectedImages');
 
-    if (selectedImages.indexOf(selectedImageId) == -1) {
-      selectedImages.push(event.target.id);
-    }
+		if (selectedImages.indexOf(selectedImageId) == -1) {
+			selectedImages.push(event.target.id);
+		}
 
-    Session.set('selectedImages', selectedImages);
-    console.log(Session.get('selectedImages'));
+		Session.set('selectedImages', selectedImages);
+		console.log(Session.get('selectedImages'));
+	},
 
-  },
+	'click .freeImg': function(event) {
 
-  'click .freeImg': function(event) {
+		correct=false;
+		console.log('Free image clicked');
+	},
 
-    correct=false;
-    console.log('Free image clicked');
+	'click .img-button': function(event) {
+		if (event.target.style.backgroundColor == "#2196F3"){
+			console.log('unclicked');
+			event.target.style.backgroundColor = "#ffffff";
+			event.target.style.borderRadius = "5px";
+		}
+		else {
+			console.log('clicked');
+			event.target.style.backgroundColor = "#2196F3";
+			event.target.style.borderRadius = "5px";
+			//event.target.className = "selected";
+		}
+	},
 
-  },
-
-  'click .img-button': function(event) {
-	if (event.target.style.backgroundColor == "#2196F3"){
-		console.log('unclicked');
-		event.target.style.backgroundColor = "#ffffff";
-		event.target.style.borderRadius = "5px";
-	}
-	else {
-		console.log('clicked');
-		event.target.style.backgroundColor = "#2196F3";
-		event.target.style.borderRadius = "5px";
-		//event.target.className = "selected";
-	}
-  },
-
-  //'click .selected': function(event) {
+//'click .selected': function(event) {
 //	event.target.style.backgroundColor == "#ffffff";
 //  },
-
-
 });
 
 
 Template.eyecaptchaContainer.events({
 
-  'click #submitTest': function(event){
-    var checkCount = Session.get('selectedImages');
-    // console.log(checkCount);
-    // console.log(adCount);
-    if ((checkCount.length == adCount) && (correct == true)) {
-      console.log("SUCCESS!");
-      alert("The test was passed.");
-    } else {
-      console.log("FAILURE!");
-      alert("The test was failed.");
-    }
-    correct = true;
-    document.location.reload(true);
-  }
+	'click #submitTest': function(event){
+		var checkCount = Session.get('selectedImages');
+		// console.log(checkCount);
+		// console.log(adCount);
+		if ((checkCount.length == adCount) && (correct == true)) {
+			console.log("SUCCESS!");
+			alert("The test was passed.");
+		} else {
+			console.log("FAILURE!");
+			alert("The test was failed.");
+		}
+		correct = true;
+		document.location.reload(true);
+	}
 });
