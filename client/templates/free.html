@@ -1,49 +1,41 @@
+<!-- Main Free template -->
 <template name="free">
-
-  <div class="row">
-    <div class="col-md-3"></div>
-		    <div class="col-md-6">
-        	{{> freeContainer}}
-      	</div>
-    <div class="col-md-3"></div>
-  </div>
-
+	<div class="row">
+		<div class="col-md-3"></div>
+			<div class="col-md-6">
+				{{> freeContainer}}
+			</div>
+		<div class="col-md-3"></div>
+	</div>
 </template>
 
-
+<!-- Free Container Template -->
 <template name="freeContainer">
+	<div class="free-container text-center">
+		<div class="title">
+			<h2>Free Image Upload</h2>
+		</div>
+		<div class="row free-img">
+			<div class="col-md-12">
+				{{> freeUpload}}
+			</div>
+		</div>
 
-  <div class="free-container text-center">
-
-  	<div class="title">
-  		<h2>Free Image Upload</h2>
-  	</div>
-
-    <div class="row free-img">
-      <div class="col-md-12">
-        {{> freeUpload}}
-      </div>
-    </div>
-
-    <div class="row img-display">
-      {{> imgDisplay}}
-    </div>
-
-  </div>
-
+		<div class="row img-display">
+			{{> imgDisplay}}
+		</div>
+	</div>
 </template>
 
 <template name="freeUpload">
-
-  <form class="freeUploadForm">
-    <input type="file" class="form-control imgSubmit" id="freeUpload" placeholder="Select Images..." multiple>
-    <!--<button type="button" class="btn btn-primary submit submitFree">Submit</button>-->
-  </form>
-
+	<form class="freeUploadForm">
+		<input type="file" class="form-control imgSubmit" id="freeUpload" placeholder="Select Images..." multiple>
+		<!--<button type="button" class="btn btn-primary submit submitFree">Submit</button>-->
+	</form>
 </template>
 
 <template name="imgDisplay">
 
-  <!--<img src="img/free/{{avatar}}">-->
+	<!--<img src="img/free/{{avatar}}">-->
 
 </template>
