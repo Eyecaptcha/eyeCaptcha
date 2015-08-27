@@ -3,8 +3,12 @@
 var adCount = 0;
 var correct = true;
 var selected = false;
+var captchaCopy = [];
+
+Meteor.subscribe('freeimagescount');
 var freeCount = Free.find().count();
 console.log(freeCount);
+
 
 // Wrap all of the EyeCaptcha Test code in a click function
 
@@ -35,9 +39,16 @@ Template.eyecaptchaContainer.events({
               // var randomNumber = Math.floor(Math.random() * 149) + 1;
               // var imgName = "img" + randomNumber;
               // var imgPath = "/img/Free/" + imgName + ".jpg";
-							var randomNumber = Math.floor(Math.random() * freeCount) + 1;
-							var imgPath = Free.findOne().skip(randomNumber).next();
-              captchaArray.push(imgPath);
+							// var randomNumber = Math.floor(Math.random() * freeCount) + 1;
+							var array = FreeKeys.find({}, {fields: {"_id":0}}).fetch();
+							console.log(array);
+							var randomIndex = Math.floor( Math.random() * array.length);
+							var element = array[randomIndex];
+							console.log(element);
+              captchaArray.push(element);
+
+							var check = Free.find({});
+							console.log(check);
           };
 
           // Randomly select a prompt to choose from
@@ -102,20 +113,20 @@ Template.eyecaptchaContainer.events({
           var freeClass = " freeImg";
           var paidClass = " paidImg";
 
-          for( j = 0, i = 1; i <= captchaLimit; i++, j++ ) {
-            document.getElementById("imageid" + i).src = captchaArray[j];
-            if(captchaArray[j].indexOf('/Free') > -1) {
-              document.getElementById("button" + i).className = "";
-              document.getElementById("button" + i).className = "img-button";
-              var d = document.getElementById("button" + i);
-              d.className = d.className + freeClass;
-            } else {
-              document.getElementById("button" + i).className = "";
-              document.getElementById("button" + i).className = "img-button";
-              var d = document.getElementById("button" + i);
-              d.className = d.className + paidClass;
-            }
-          };
+          // for( j = 0, i = 1; i <= captchaLimit; i++, j++ ) {
+          //   document.getElementById("imageid" + i).src = captchaArray[j];
+          //   if(captchaArray[j].indexOf('/Free') > -1) {
+          //     document.getElementById("button" + i).className = "";
+          //     document.getElementById("button" + i).className = "img-button";
+          //     var d = document.getElementById("button" + i);
+          //     d.className = d.className + freeClass;
+          //   } else {
+          //     document.getElementById("button" + i).className = "";
+          //     document.getElementById("button" + i).className = "img-button";
+          //     var d = document.getElementById("button" + i);
+          //     d.className = d.className + paidClass;
+          //   }
+          // };
 
 	},
 

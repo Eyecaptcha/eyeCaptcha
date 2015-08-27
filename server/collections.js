@@ -19,3 +19,8 @@ Free.allow({
 		return true;
 	}
 });
+
+Meteor.publish('freeimagescount', function() {
+  var freeimagecount = Free.find().count();
+	return freeimagecount;
+});
