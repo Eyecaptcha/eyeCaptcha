@@ -1,107 +1,102 @@
+<!-- Main Webmaster template -->
 <template name="webmasterDash">
-
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        {{> webmasterDashContainer}}
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			{{> webmasterDashContainer}}
+		</div>
+		<div class="col-md-1"></div>
+	</div>
 </template>
 
+<!-- Webmaster Dash container template -->
 <template name="webmasterDashContainer">
-<div class="webmaster-container">
-<div class="title text-center">
-	<h2>Webmaster Dashboard</h2>
-</div>
-  <div class="row">
-    <div class="col-md-12">
-	<div class="panel panel-default profit-panel">
-  		<div class="panel-body">
-			<!--profit goes here.-->
-    			<h4>Overall Profit: $30.00</h4>
-  		</div>
-	</div>
-    </div>
-  </div>
+	<div class="webmaster-container">
+		<div class="title text-center">
+			<h2>Webmaster Dashboard</h2>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default profit-panel">
+					<div class="panel-body">
+						<!--profit goes here.-->
+						<h4>Overall Profit: $12.00</h4>
+					</div>
+				</div>
+			</div>
+		</div>
 <!--Advertisers-->
-
-  <div class="row">
-    <div class="col-md-12">
-	<div class="panel panel-default">
-  		<div class="panel-heading advertisers-panel">
-    			<h3 class="panel-title">Advertisers:</h3>
-  		</div>
-  		<div class="panel-body adInfo">
-    			{{> advertiser}}
-  		</div>
-	</div>
-    </div>
-  </div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading advertisers-panel">
+						<h3 class="panel-title">Advertisers:</h3>
+					</div>
+					<div class="panel-body adInfo">
+						{{> advertiser}}
+					</div>
+				</div>
+			</div>
+		</div>
 	
 <!-- Keywords -->
-<div class="row">
-		<div class="col-md-12">
-			<div class="panel panel-default">
-  				<div class="panel-heading advertisers-panel">
-    					<h3 class="panel-title">Keywords:</h3>
-  				</div>
-  				<div class="panel-body">
-    					<textarea class="form-control" rows="3" placeholder="Security, anti-bot, protection, profit, advertisement"></textarea>
-  				</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading advertisers-panel">
+						<h3 class="panel-title">Keywords:</h3>
+					</div>
+					<div class="panel-body">
+						<textarea class="form-control" rows="3" placeholder="Security, anti-bot, protection, profit, advertisement"></textarea>
+					</div>
+				</div>
 			</div>
-   		</div>
-</div>
+		</div>
 
 <!-- Save -->
-<div class = "row">
-	<div class="col-md-12 webmaster-buttons">
-		<button type="button" class="btn btn-primary">Save</button>
+		<div class = "row">
+			<div class="col-md-12 webmaster-buttons">
+				<button type="button" class="btn btn-primary">Save</button>
+			</div>
+		</div>
+		<br>
 	</div>
-</div>
-<br>
-</div>
 </template>
 
+<!-- Advertiser template -->
 <template name="advertiser">
-<div class="row">
-	<div class="col-md-12">
-
-		<h5 class="adName title">Coca Cola</h5>
-
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="adName title">Coca Cola</h5>
+		</div>
 	</div>
-  </div>
 
-<div class="row">
-			<div class="col-md-4 lineup">
-				Solved: 100
-			</div>
-			<div class="col-md-4 lineup">
-				Paying: $25.00
-			</div>
-			<div class="col-md-4 lineup">
-				Content: Soda, soft drink
-			</div>
-</div>
+	<div class="row">
+		<div class="col-md-4 lineup">
+			Solved: 100
+		</div>
+		<div class="col-md-4 lineup">
+			Paying: $10.00
+		</div>
+		<div class="col-md-4 lineup">
+			Content: Soda, soft drink
+		</div>
+	</div>
 <br>
-<div class="row">
-	<div class="col-md-12">
-
-		<h5 class="adName title">Nike</h5>
-
+	<div class="row">
+		<div class="col-md-12">
+			<h5 class="adName title">Nike</h5>
+		</div>
 	</div>
-  </div>
-
-<div class="row">
-			<div class="col-md-4 lineup">
-				Solved: 20
-			</div>
-			<div class="col-md-4 lineup">
-				Paying: $5.00
-			</div>
-			<div class="col-md-4 lineup">
-				Content: Shoes, fashion
-			</div>
-</div>
+	<div class="row">
+		<div class="col-md-4 lineup">
+			Solved: 20
+		</div>
+		<div class="col-md-4 lineup">
+			Paying: $2.00
+		</div>
+		<div class="col-md-4 lineup">
+			Content: Shoes, fashion
+		</div>
+	</div>
 </template>

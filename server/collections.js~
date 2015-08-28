@@ -24,11 +24,3 @@ Meteor.publish('freeimagescount', function() {
   var freeimagecount = Free.find().count();
 	return freeimagecount;
 });
-
-Meteor.publish('Websites', function(){
-	return Websites.find();
-});
-
-Meteor.publish('Advertisers', function(){
-	return Advertisers.find();
-});
