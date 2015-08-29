@@ -32,3 +32,6 @@ Meteor.publish('Websites', function(){
 Meteor.publish('Advertisers', function(){
 	return Advertisers.find();
 });
+
+
+
