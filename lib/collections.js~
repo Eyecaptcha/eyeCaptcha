@@ -27,10 +27,12 @@ if (Meteor.isClient) {
 	});
 }
 
-//Websites.insert({name: "facebook.com", solved: 120, cost: 30.00, keywords: "social media"});
-//Websites.insert({name: "twitch.tv", solved: 30, cost: 7.50, keywords: "streaming, gaming, video games"});
 Websites.remove({});
 Advertisers.remove({});
-//Advertisers.insert({name: "Coca Cola", solved: 100, cost: 10.00, keywords: "soda, soft drink"});
-//Advertisers.insert({name: "Nike", solved: 20, cost: 2.00, keywords: "shoes, fashion"});
+
+Websites.insert({name: "facebook.com", attempts: 304, solved: 120, cost: 30.00, keywords: "social media"});
+Websites.insert({name: "twitch.tv", attempts: 92, solved: 30, cost: 7.50, keywords: "streaming, gaming, video games"});
+
+Advertisers.insert({name: "Coca Cola", attempts: 251, solved: 100, cost: 10.00, keywords: "soda, soft drink"});
+Advertisers.insert({name: "Nike", attempts: 63, solved: 20, cost: 2.00, keywords: "shoes, fashion"});
 

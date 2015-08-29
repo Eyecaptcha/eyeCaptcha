@@ -71,16 +71,44 @@
 				<h5 class="adName title">{{name}}</h5>
 			</div>
 		</div>
-
+<div class="row">
+			<div class="col-md-2 lineup">
+				Attempts:
+			</div>
+			<div class="col-md-2 lineup">
+				Solved:
+			</div>
+			<div class="col-md-2 lineup">
+				Failed:
+			</div>
+			<div class="col-md-2 lineup">
+				Success:
+			</div>
+			<div class="col-md-2 lineup">
+				Paying:
+			</div>
+			<div class="col-md-2 lineup">
+				Content:
+			</div>
+		</div>
 		<div class="row">
-			<div class="col-md-4 lineup">
-				Solved: {{solved}}
+			<div class="col-md-2 lineup">
+				{{attempts}}
 			</div>
-			<div class="col-md-4 lineup">
-				Paying: {{cost}}
+			<div class="col-md-2 lineup">
+				{{solved}}
 			</div>
-			<div class="col-md-4 lineup">
-				Content: {{keywords}}
+			<div class="col-md-2 lineup">
+				{{failed}}
+			</div>
+			<div class="col-md-2 lineup">
+				{{success}}%
+			</div>
+			<div class="col-md-2 lineup">
+				{{cost}}
+			</div>
+			<div class="col-md-2 lineup">
+				{{keywords}}
 			</div>
 		</div>
 	{{/each}}
