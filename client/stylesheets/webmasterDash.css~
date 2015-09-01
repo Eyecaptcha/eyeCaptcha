@@ -54,6 +54,7 @@
 
 .advertisers-panel h3 {
   color: #4d4d4d;
+  font-size: 18px;
 }
 
 .webmaster-buttons {

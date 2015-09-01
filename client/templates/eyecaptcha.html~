@@ -20,7 +20,7 @@
 			<div class="col-md-12 prompt">{{> adPrompt}}</div>
 		</div>
 		<!-- Images row 1 -->
-		<div class="row">
+		<div class="row marginBottom">
 			<div class="col-md-1"></div>
 			<div class="col-md-10">
 				{{> img11}}

@@ -1,188 +1,195 @@
+<!-- Main Advertiser template -->
 <template name="advertiserDash">
-
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        {{> advertiserDashContainer}}
-      </div>
-      <div class="col-md-1"></div>
-    </div>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			{{> advertiserDashContainer}}
+		</div>
+		<div class="col-md-1"></div>
+	</div>
 
 </template>
 
+<!-- Container for Advertiser Dash -->
 <template name="advertiserDashContainer">
-
-  <div class="advertiser-container">
-  <div class="title text-center">
-  	<h2>Advertiser Dashboard</h2>
-  </div>
-    <div class="row">
-	<div class="col-md-12">
-      		<div class="panel panel-default profit-panel">
-  			<div class="panel-body">
-				<!--profit goes here.-->
-    				<h4>Overall Cost: $37.50</h4>
-  			</div>
+	<div class="advertiser-container">
+		<div class="title text-center">
+			<h2>Advertiser Dashboard</h2>
 		</div>
-	</div>
-    </div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default profit-panel">
+					<div class="panel-body">
+						<!--profit goes here.-->
+						<h4>Overall Cost: $37.50</h4>
+					</div>
+				</div>
+			</div>
+		</div>
 
 <!-- Websites -->
-  <div class="row">
-    <div class="col-md-12">
-	<div class="panel panel-default">
-  		<div class="panel-heading website-panel">
-    			<h3 class="panel-title">Websites:</h3>
-  		</div>
-  		<div class="panel-body webInfo">
-    			{{> website}}
-  		</div>
-	</div>
-    </div>
-  </div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading website-panel">
+						<h3 class="panel-title">Websites:</h3>
+					</div>
+					<div class="panel-body webInfo">
+						<!-- Website listing goes here -->
+						{{> website}}
+					</div>
+				</div>
+			</div>
+		</div>
 
 <!-- Keywords -->
-  <div class="row">
-		<div class="col-md-12">
-			<div class="panel panel-default">
-  				<div class="panel-heading website-panel">
-    					<h3 class="panel-title">Keywords:</h3>
-  				</div>
-  				<div class="panel-body">
-    					<textarea class="form-control" rows="3" placeholder="Soda, soft drink, refreshing"></textarea>
-  				</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading website-panel">
+						<h3 class="panel-title">Keywords:</h3>
+					</div>
+					<div class="panel-body">
+						<!-- Keywords go here -->
+						<textarea class="form-control" rows="3" placeholder="Soda, soft drink, refreshing"></textarea>
+					</div>
+				</div>
 			</div>
-   		</div>
-</div>
+		</div>
 
 <!-- Current EyeCatcha -->
-<div class="row">
-    <div class="col-md-12">
-	<div class="panel panel-default">
-  		<div class="panel-heading website-panel">
-    			<h3 class="panel-title">Current:</h3>
-  		</div>
-  		<div class="panel-body webInfo">
-    			{{> current}}
-  		</div>
-	</div>
-    </div>
-  </div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading website-panel">
+						<h3 class="panel-title">Current:</h3>
+					</div>
+					<div class="panel-body webInfo">
+						<!-- Current EyeCaptcha info goes here -->
+						{{> current}}
+					</div>
+				</div>
+			</div>
+		</div>
 
 <!-- Add New -->
-<div class="row">
-    <div class="col-md-12">
-	<div class="panel panel-default">
-  		<div class="panel-heading website-panel">
-    			<h3 class="panel-title">Add New:</h3>
-  		</div>
-  		<div class="panel-body webInfo">
-    			{{> addNew}}
-  		</div>
-	</div>
-    </div>
-  </div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading website-panel">
+						<h3 class="panel-title">Add New:</h3>
+					</div>
+					<div class="panel-body webInfo">
+						<!-- Here you can add new EyeCaptcha -->
+						{{> addNew}}
+					</div>
+				</div>
+			</div>
+		</div>
 
 <!-- Save -->
-  <div class = "row">
-  	<div class="col-md-12 advertiser-buttons lineup">
-  		<button type="button" class="btn btn-primary">Save</button>
-  	</div>
-  </div>
-  <br>
-  </div>
-
+		<div class = "row">
+			<div class="col-md-12 advertiser-buttons lineup">
+				<button type="button" class="btn btn-primary">Save</button>
+			</div>
+		</div>
+	<br>
+	</div>
 </template>
 
 <!-- Current EyeCaptcha template -->
 <template name="current">
-<div class="row">
-  	<div class="col-md-12">
-  		Refreshing classic drink you can buy now for only 99 cents
-  	</div>
-  </div>
-  <div class="row">
-  	<div class="col-md-4">
-  		<img src="img/Paid/CocaCola/coke1.jpg" class="images lineup">
-  	</div>
-  	<div class="col-md-4">
-  		<img src="img/Paid/CocaCola/coke2.jpg" class="images lineup">
-  	</div>
-  	<div class="col-md-4">
-  		<img src="img/Paid/CocaCola/coke3.jpg" class="images lineup">
-  	</div>
-  </div>
+	<div class="row">
+		<div class="col-md-12">
+			Refreshing classic drink you can buy now for only 99 cents
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<img src="img/Paid/CocaCola/coke1.jpg" class="images lineup">
+		</div>
+		<div class="col-md-4">
+			<img src="img/Paid/CocaCola/coke2.jpg" class="images lineup">
+		</div>
+		<div class="col-md-4">
+			<img src="img/Paid/CocaCola/coke3.jpg" class="images lineup">
+		</div>
+	</div>
 </template>
 
 <!-- Add New template-->
 <template name="addNew">
-
-
-  <div class="row">
-      <div class="col-md-3">
-  	<h5>Select Image:</h5>
-      </div>
-      <div class="col-md-9">
-  	<div class="input-group">
-        <input type="text" class="form-control" placeholder="Select Image...">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Select</button>
-        </span>
-      </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="col-md-3">
-  	<h5>Enter Prompt:</h5>
-      </div>
-      <div class="col-md-9">
-        <input type="text" class="form-control" placeholder="Enter Prompt...">
-      </div>
-  </div>
-
+	<div class="row">
+		<div class="col-md-3">
+			<h5>Select Image:</h5>
+		</div>
+		<div class="col-md-9">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Select Image...">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button">Select</button>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<h5>Enter Prompt:</h5>
+		</div>
+		<div class="col-md-9">
+			<input type="text" class="form-control" placeholder="Enter Prompt...">
+		</div>
+	</div>
 </template>
 
 <!-- Website template -->
 <template name="website">
-
-<div class="row">
-	<div class="col-md-12">
-
-		<h5 class="adName title">facebook.com</h5>
-
-	</div>
-  </div>
-
-<div class="row">
-			<div class="col-md-4 lineup">
-				Solved: 120
+	
+	{{#each websites}}
+		<div class="row">
+			<div class="col-md-12">
+				<h5 class="adName title">{{name}}</h5>
 			</div>
-			<div class="col-md-4 lineup">
-				Cost: $30.00
+		</div>
+		<div class="row">
+			<div class="col-md-2 lineup">
+				Attempts:
 			</div>
-			<div class="col-md-4 lineup">
-				Content: Social media
+			<div class="col-md-2 lineup">
+				Solved:
 			</div>
-</div>
-<br>
-<div class="row">
-	<div class="col-md-12">
-
-		<h5 class="adName title">twitch.tv</h5>
-
-	</div>
-  </div>
-
-<div class="row">
-			<div class="col-md-4 lineup">
-				Solved: 30
+			<div class="col-md-2 lineup">
+				Failed:
 			</div>
-			<div class="col-md-4 lineup">
-				Paying: $7.50
+			<div class="col-md-2 lineup">
+				Success:
 			</div>
-			<div class="col-md-4 lineup">
-				Content: Streaming, gaming, video games
+			<div class="col-md-2 lineup">
+				Cost:
 			</div>
-</div>
-
+			<div class="col-md-2 lineup">
+				Content:
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2 lineup">
+				{{attempts}}
+			</div>
+			<div class="col-md-2 lineup">
+				{{solved}}
+			</div>
+			<div class="col-md-2 lineup">
+				100
+			</div>
+			<div class="col-md-2 lineup">
+				20%
+			</div>
+			<div class="col-md-2 lineup">
+				{{cost}}
+			</div>
+			<div class="col-md-2 lineup">
+				{{keywords}}
+			</div>
+		</div>
+	{{/each}}
 </template>

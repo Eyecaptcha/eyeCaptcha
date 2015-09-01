@@ -4,7 +4,7 @@
   margin: 100px auto 200px auto;
   background: white;
   border-radius: 6px;
-  width: 650px;
+  width: 750px;
   border: 10px solid #1E88E5;
   box-shadow: 2px 2px 2px #0D47A1;
 }
@@ -25,6 +25,10 @@
   color: #4d4d4d;
   font-size: 18px;
   margin: 15px 0px 10px 0px;
+}
+
+.lineup {
+  text-align: center;
 }
 
 .cost-panel {

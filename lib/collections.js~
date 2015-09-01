@@ -1,4 +1,3 @@
-//FREE IMAGE COLLECTION
 Free = new FS.Collection('free', {
 	stores: [new FS.Store.FileSystem('free', {path: "../../../../../public/img/free"})]
 });
@@ -7,16 +6,8 @@ if (Meteor.isClient) {
 	Meteor.subscribe('Free');
 };
 
-//ADVERTISERS IMAGE COLLECTION
-Advertisers = new FS.Collection('advertisers', {
-	stores: [new FS.Store.FileSystem('advertisers', {path: "../../../../../public/img/free"})]
-});
+FreeKeys = new Mongo.Collection('freekeys');
 
-if (Meteor.isClient) {
-	Meteor.subscribe('Advertisers');
-};
-
-//TEST MONGO COLLECTIONS
 Websites = new Mongo.Collection("websites");
 Advertisers = new Mongo.Collection("advertisers");
 
@@ -44,3 +35,27 @@ Websites.insert({name: "twitch.tv", attempts: 92, solved: 30, failed: 62, succes
 
 Advertisers.insert({name: "Coca Cola", attempts: 251, solved: 100, failed: 151, success: 39.84, cost: 10.00, keywords: "soda, soft drink"});
 Advertisers.insert({name: "Nike", attempts: 63, solved: 20, failed: 43, success: 31.74, cost: 2.00, keywords: "shoes, fashion"});
+
+ImgButtons = new Mongo.Collection("imgButtons");
+
+if (Meteor.isClient) {
+	Template.eyecaptchaContainer.helpers({
+		'imgButtons': function() {
+			return ImgButtons.find();
+		}
+	});
+	/*Template.eyecaptchaContainer.helpers({
+		isSelected: function(selected) {
+			return selected === false;
+		}
+	});*/
+}
+
+ImgButtons.remove({});
+ImgButtons.insert({btnNum: 1, selected: false});
+ImgButtons.insert({btnNum: 2, selected: false});
+ImgButtons.insert({btnNum: 3, selected: false});
+ImgButtons.insert({btnNum: 4, selected: false});
+ImgButtons.insert({btnNum: 5, selected: false});
+ImgButtons.insert({btnNum: 6, selected: false});
+

@@ -144,39 +144,52 @@
 
 <!-- Website template -->
 <template name="website">
-	<div class="row">
-		<div class="col-md-12">
-			<h5 class="adName title">facebook.com</h5>
+	
+	{{#each websites}}
+		<div class="row">
+			<div class="col-md-12">
+				<h5 class="adName title">{{name}}</h5>
+			</div>
 		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-4 lineup">
-			Solved: 120
+		<div class="row">
+			<div class="col-md-2 lineup">
+				Attempts:
+			</div>
+			<div class="col-md-2 lineup">
+				Solved:
+			</div>
+			<div class="col-md-2 lineup">
+				Failed:
+			</div>
+			<div class="col-md-2 lineup">
+				Success:
+			</div>
+			<div class="col-md-2 lineup">
+				Cost:
+			</div>
+			<div class="col-md-2 lineup">
+				Content:
+			</div>
 		</div>
-		<div class="col-md-4 lineup">
-			Cost: $30.00
+		<div class="row">
+			<div class="col-md-2 lineup">
+				{{attempts}}
+			</div>
+			<div class="col-md-2 lineup">
+				{{solved}}
+			</div>
+			<div class="col-md-2 lineup">
+				{{failed}}
+			</div>
+			<div class="col-md-2 lineup">
+				{{success}}%
+			</div>
+			<div class="col-md-2 lineup">
+				{{cost}}
+			</div>
+			<div class="col-md-2 lineup">
+				{{keywords}}
+			</div>
 		</div>
-		<div class="col-md-4 lineup">
-			Content: Social media
-		</div>
-	</div>
-<br>
-	<div class="row">
-		<div class="col-md-12">
-			<h5 class="adName title">twitch.tv</h5>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-4 lineup">
-			Solved: 30
-		</div>
-		<div class="col-md-4 lineup">
-			Paying: $7.50
-		</div>
-		<div class="col-md-4 lineup">
-			Content: Streaming, gaming, video games
-		</div>
-	</div>
+	{{/each}}
 </template>

@@ -155,7 +155,6 @@ Template.eyecaptchaContainer.events({
 		console.log('Free image clicked');
 	},
 
-	//Selecting/Unselecting images
 	'click #imageid1': function(event) {
 		if(selected1==false){
 			selected1=true;
