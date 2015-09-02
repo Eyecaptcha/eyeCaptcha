@@ -15,6 +15,4 @@ email
 cfs:standard-packages
 cfs:filesystem
 cfs:gridfs
-autopublish
 insecure
-underscore

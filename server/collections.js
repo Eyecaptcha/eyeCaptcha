@@ -28,7 +28,7 @@ Meteor.publish('freeimagescount', function() {
 
 //ADVERTISERS IMAGE COLLECTION
 Meteor.publish('Advertisers', function(){
-	return Free.find();
+	return Advertisers.find();
 });
 
 Advertisers.allow({
@@ -47,13 +47,4 @@ Advertisers.allow({
 	remove: function () {
 		return true;
 	}
-});
-
-//TEST MONGO COLLECTIONS
-Meteor.publish('Websites', function(){
-	return Websites.find();
-});
-
-Meteor.publish('Advertisers', function(){
-	return Advertisers.find();
 });

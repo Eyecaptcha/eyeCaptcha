@@ -7,6 +7,9 @@ Template.freeUpload.events({
 
       var file = event.target.files[i];
       var fsFile = new FS.File(file);
+      var count = Free.find().count() + 1;
+      console.log(count);
+      fsFile.freeKey = count;
 
       Free.insert(fsFile, function(error, fileObject) {
         if (error) {
