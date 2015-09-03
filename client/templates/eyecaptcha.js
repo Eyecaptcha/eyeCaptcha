@@ -1,18 +1,16 @@
 // Set variables to start, correct and selected are possibly redundant
 
-var adCount = 0;
-var correct = true;
-var selected1 = false;
-var selected2 = false;
-var selected3 = false;
-var selected4 = false;
-var selected5 = false;
-var selected6 = false;
-var captchaCopy = [];
-var captchaArray = [];
+	var correct = true;
+
+	// Selected variables to allow select/deselect functionality for image buttons
+	var selected1 = false;
+	var selected2 = false;
+	var selected3 = false;
+	var selected4 = false;
+	var selected5 = false;
+	var selected6 = false;
 
 // Wrap all of the EyeCaptcha Test code in a click function
-
 Template.eyecaptchaContainer.events({
 	'click #generateTest': function(event){
 		event.preventDefault();
@@ -20,7 +18,7 @@ Template.eyecaptchaContainer.events({
     // Reset selectedImages array
     Session.set('selectedImages', []);
 
-          // Declare captchaArray variable to be used later
+          // Declare captchaArray variable to store image paths in array
           var captchaArray = [];
 
           // Generate random number function
@@ -121,22 +119,9 @@ Template.eyecaptchaContainer.events({
 
 					console.log(captchaArray);
           // Loop through the array to add .src to images and check whether they are free or paid
-          var freeClass = " freeImg";
-          var paidClass = " paidImg";
 
           for( j = 0, i = 1; i <= captchaLimit; i++, j++ ) {
              document.getElementById("imageid" + i).src = "img/tests/" + captchaArray[j];
-            //  if(captchaArray[j].indexOf('/Free') > -1) {
-            //    document.getElementById("button" + i).className = "";
-            //    document.getElementById("button" + i).className = "img-button";
-            //    var d = document.getElementById("button" + i);
-            //    d.className = d.className + freeClass;
-            //  } else {
-            //    document.getElementById("button" + i).className = "";
-            //    document.getElementById("button" + i).className = "img-button";
-            //    var d = document.getElementById("button" + i);
-            //    d.className = d.className + paidClass;
-            //  }
            };
 
 	},
@@ -238,7 +223,6 @@ Template.eyecaptchaContainer.events({
 
 
 Template.eyecaptchaContainer.events({
-
 	'click #submitTest': function(event){
 		var checkCount = Session.get('selectedImages');
 		// console.log(checkCount);

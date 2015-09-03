@@ -1,5 +1,6 @@
 <!-- Main Advertiser template -->
 <template name="advertiserDash">
+
 	<div class="row">
 		<div class="col-md-1"></div>
 		<div class="col-md-10">
@@ -12,6 +13,7 @@
 
 <!-- Container for Advertiser Dash -->
 <template name="advertiserDashContainer">
+
 	<div class="advertiser-container">
 		<div class="title text-center">
 			<h2>Advertiser Dashboard</h2>
@@ -42,6 +44,36 @@
 			</div>
 		</div>
 
+<!-- Current EyeCatcha -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading website-panel">
+						<h3 class="panel-title">Current Test:</h3>
+					</div>
+					<div class="panel-body webInfo">
+						<!-- Current EyeCaptcha info goes here -->
+						{{> current}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- Add New -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading website-panel">
+						<h3 class="panel-title">Add New Test:</h3>
+					</div>
+					<div class="panel-body webInfo">
+						<!-- Here you can add new EyeCaptcha test -->
+						{{> addNewTest}}
+					</div>
+				</div>
+			</div>
+		</div>
+
 <!-- Keywords -->
 		<div class="row">
 			<div class="col-md-12">
@@ -57,94 +89,13 @@
 			</div>
 		</div>
 
-<!-- Current EyeCatcha -->
-		<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading website-panel">
-						<h3 class="panel-title">Current:</h3>
-					</div>
-					<div class="panel-body webInfo">
-						<!-- Current EyeCaptcha info goes here -->
-						{{> current}}
-					</div>
-				</div>
-			</div>
-		</div>
+	</div>
 
-<!-- Add New -->
-		<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading website-panel">
-						<h3 class="panel-title">Add New:</h3>
-					</div>
-					<div class="panel-body webInfo">
-						<!-- Here you can add new EyeCaptcha -->
-						{{> addNew}}
-					</div>
-				</div>
-			</div>
-		</div>
-
-<!-- Save -->
-		<div class = "row">
-			<div class="col-md-12 advertiser-buttons lineup">
-				<button type="button" class="btn btn-primary">Save</button>
-			</div>
-		</div>
-	<br>
-	</div>
-</template>
-
-<!-- Current EyeCaptcha template -->
-<template name="current">
-	<div class="row">
-		<div class="col-md-12">
-			Refreshing classic drink you can buy now for only 99 cents
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-			<img src="img/Paid/CocaCola/coke1.jpg" class="images lineup">
-		</div>
-		<div class="col-md-4">
-			<img src="img/Paid/CocaCola/coke2.jpg" class="images lineup">
-		</div>
-		<div class="col-md-4">
-			<img src="img/Paid/CocaCola/coke3.jpg" class="images lineup">
-		</div>
-	</div>
-</template>
-
-<!-- Add New template-->
-<template name="addNew">
-	<div class="row">
-		<div class="col-md-3">
-			<h5>Select Image:</h5>
-		</div>
-		<div class="col-md-9">
-			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Select Image...">
-				<span class="input-group-btn">
-					<button class="btn btn-default" type="button">Select</button>
-				</span>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-3">
-			<h5>Enter Prompt:</h5>
-		</div>
-		<div class="col-md-9">
-			<input type="text" class="form-control" placeholder="Enter Prompt...">
-		</div>
-	</div>
 </template>
 
 <!-- Website template -->
 <template name="website">
-	
+
 	{{#each websites}}
 		<div class="row">
 			<div class="col-md-12">
@@ -192,4 +143,83 @@
 			</div>
 		</div>
 	{{/each}}
+
+</template>
+
+<!-- Current EyeCaptcha template -->
+<template name="current">
+
+	<div class="row">
+		<div class="col-md-12">
+			Refreshing classic drink you can buy now for only 99 cents
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<img src="img/Paid/CocaCola/coke1.jpg" class="images lineup">
+		</div>
+		<div class="col-md-4">
+			<img src="img/Paid/CocaCola/coke2.jpg" class="images lineup">
+		</div>
+		<div class="col-md-4">
+			<img src="img/Paid/CocaCola/coke3.jpg" class="images lineup">
+		</div>
+	</div>
+
+</template>
+
+<!-- Add New Test template-->
+<template name="addNewTest">
+
+<!-- {{> companyInsert}} -->
+
+	<form class="testUploadForm">
+		<div class="row">
+			<div class="col-md-3">
+				<h5>Company:</h5>
+			</div>
+			<div class="col-md-9">
+				<select id="companyName">
+					<option value="Bouqs">Bouqs</option>
+					<option value="Coca-Cola">Coca-Cola</option>
+					<option value="Nike">Nike</option>
+					<option value="North Face">North Face</option>
+					<option value="Patagonia">Patagonia</option>
+					<option value="Snickers">Snickers</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h5>Enter Prompt:</h5>
+			</div>
+			<div class="col-md-9">
+				<input type="text" class="form-control" name="prompt" id="testPrompt" placeholder="Enter Prompt...">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h5>Select Image:</h5>
+			</div>
+			<div class="col-md-9">
+				<div class="input-group">
+					<input type="file" class="form-control testSubmit" id="testUpload" name="companyImage" placeholder="Select Images..." multiple>
+				</div>
+			</div>
+		</div>
+		<div class = "row">
+			<div class="col-md-12 advertiser-buttons lineup">
+				<button type="button" class="btn btn-primary newTestSubmit">Save</button>
+			</div>
+		</div>
+	</form>
+
+</template>
+
+<template name="companyInsert">
+
+	<form class="company-insert">
+		<input type="text" class="form-control" id="companyName" name="text" placeholder="Enter company name here">
+	</form>
+
 </template>
