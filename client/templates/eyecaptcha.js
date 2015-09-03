@@ -9,18 +9,14 @@ var selected4 = false;
 var selected5 = false;
 var selected6 = false;
 var captchaCopy = [];
-
-Meteor.subscribe('freeimagescount');
-var freeCount = Free.find().count();
-console.log(freeCount);
-
+var captchaArray = [];
 
 // Wrap all of the EyeCaptcha Test code in a click function
 
 Template.eyecaptchaContainer.events({
 	'click #generateTest': function(event){
 		event.preventDefault();
-		
+
     // Reset selectedImages array
     Session.set('selectedImages', []);
 
@@ -42,19 +38,25 @@ Template.eyecaptchaContainer.events({
 
           // Generate the correct amount of random images from the free images
           for( i = 0; i < freeImages; i++ ) {
-              // var randomNumber = Math.floor(Math.random() * 149) + 1;
-              // var imgName = "img" + randomNumber;
-              // var imgPath = "/img/Free/" + imgName + ".jpg";
-							// var randomNumber = Math.floor(Math.random() * freeCount) + 1;
-							var array = FreeKeys.find({}, {fields: {"_id":0}}).fetch();
-							console.log(array);
-							var randomIndex = Math.floor( Math.random() * array.length);
-							var element = array[randomIndex];
-							console.log(element);
-              captchaArray.push(element);
 
-							var check = Free.find({});
-							console.log(check);
+							// Get count for Free collection
+							var freeImgCount = Free.find().count();
+							console.log(freeImgCount);
+
+							// Generate random number and find freeKey
+							var randomIndex = Math.floor( Math.random() * freeImgCount );
+							var imgKey = Free.findOne( { freeKey : randomIndex } );
+
+							// Get the copies.free.key for the image, this statement is the only way to get just the key
+								if (imgKey) {
+								   var imgPath = imgKey.copies.free.key;
+
+								   console.log(imgPath);
+								}
+
+							// Push the key imgPath into captchaArray
+              captchaArray.push(imgPath);
+							console.log(captchaArray);
           };
 
           // Randomly select a prompt to choose from
@@ -98,6 +100,7 @@ Template.eyecaptchaContainer.events({
                 var paidImgPath = "/img/Paid/NorthFace/" + imgName + ".jpg";
             }
             captchaArray.push(paidImgPath);
+						console.log(captchaArray);
           };
 
           // Shuffle the order of captchaArray - source-code can be found here: http://bost.ocks.org/mike/shuffle/
@@ -113,26 +116,28 @@ Template.eyecaptchaContainer.events({
               t = captchaArray[m];
               captchaArray[m] = captchaArray[i];
               captchaArray[i] = t;
+
             }
 
+					console.log(captchaArray);
           // Loop through the array to add .src to images and check whether they are free or paid
           var freeClass = " freeImg";
           var paidClass = " paidImg";
 
-          // for( j = 0, i = 1; i <= captchaLimit; i++, j++ ) {
-          //   document.getElementById("imageid" + i).src = captchaArray[j];
-          //   if(captchaArray[j].indexOf('/Free') > -1) {
-          //     document.getElementById("button" + i).className = "";
-          //     document.getElementById("button" + i).className = "img-button";
-          //     var d = document.getElementById("button" + i);
-          //     d.className = d.className + freeClass;
-          //   } else {
-          //     document.getElementById("button" + i).className = "";
-          //     document.getElementById("button" + i).className = "img-button";
-          //     var d = document.getElementById("button" + i);
-          //     d.className = d.className + paidClass;
-          //   }
-          // };
+          for( j = 0, i = 1; i <= captchaLimit; i++, j++ ) {
+             document.getElementById("imageid" + i).src = "img/tests/" + captchaArray[j];
+            //  if(captchaArray[j].indexOf('/Free') > -1) {
+            //    document.getElementById("button" + i).className = "";
+            //    document.getElementById("button" + i).className = "img-button";
+            //    var d = document.getElementById("button" + i);
+            //    d.className = d.className + freeClass;
+            //  } else {
+            //    document.getElementById("button" + i).className = "";
+            //    document.getElementById("button" + i).className = "img-button";
+            //    var d = document.getElementById("button" + i);
+            //    d.className = d.className + paidClass;
+            //  }
+           };
 
 	},
 
@@ -249,3 +254,51 @@ Template.eyecaptchaContainer.events({
 		document.location.reload(true);
 	}
 });
+
+// Template.img11.helpers({
+// 	eyecaptcha11: function(captchaArray){
+// 		var eyecaptcha11 = captchaArray[0];
+//
+// 		return (eyecaptcha11);
+// 	}
+// });
+//
+// Template.img12.helpers({
+// 	eyecaptcha12: function(captchaArray){
+// 		var eyecaptcha12 = captchaArray[1];
+//
+// 		return (eyecaptcha12);
+// 	}
+// });
+//
+// Template.img21.helpers({
+// 	eyecaptcha21: function(captchaArray){
+// 		var eyecaptcha21 = captchaArray[2];
+//
+// 		return (eyecaptcha21);
+// 	}
+// });
+//
+// Template.img22.helpers({
+// 	eyecaptcha22: function(captchaArray){
+// 		var eyecaptcha22 = captchaArray[3];
+//
+// 		return (eyecaptcha22);
+// 	}
+// });
+//
+// Template.img31.helpers({
+// 	eyecaptcha31: function(captchaArray){
+// 		var eyecaptcha31 = captchaArray[4];
+//
+// 		return (eyecaptcha31);
+// 	}
+// });
+//
+// Template.img32.helpers({
+// 	eyecaptcha32: function(captchaArray){
+// 		var eyecaptcha32 = captchaArray[5];
+//
+// 		return (eyecaptcha32);
+// 	}
+// });

@@ -21,11 +21,6 @@ Free.allow({
 	}
 });
 
-Meteor.publish('freeimagescount', function() {
-  var freeimagecount = Free.find().count();
-	return freeimagecount;
-});
-
 //ADVERTISERS IMAGE COLLECTION
 Meteor.publish('Advertisers', function(){
 	return Advertisers.find();
