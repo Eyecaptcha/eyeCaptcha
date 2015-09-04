@@ -35,7 +35,7 @@ Template.eyecaptchaContainer.events({
           var freeImages = captchaLimit - adImages;
 
           // Generate the correct amount of random images from the free images
-          for( i = 0; i < freeImages; i++ ) {
+          for( var i = 0; i < freeImages; i++ ) {
 
 							// Get count for Free collection
 							var freeImgCount = Free.find().count();
@@ -43,17 +43,10 @@ Template.eyecaptchaContainer.events({
 
 							// Generate random number and find freeKey
 							var randomIndex = Math.floor( Math.random() * freeImgCount );
-							var imgKey = Free.findOne( { freeKey : randomIndex } );
-
-							// Get the copies.free.key for the image, this statement is the only way to get just the key
-								if (imgKey) {
-								   var imgPath = imgKey.copies.free.key;
-
-								   console.log(imgPath);
-								}
+							var img = Free.findOne( { freeKey : randomIndex } );
 
 							// Push the key imgPath into captchaArray
-              captchaArray.push(imgPath);
+              captchaArray.push(img.url());
 							console.log(captchaArray);
           };
 
@@ -118,10 +111,10 @@ Template.eyecaptchaContainer.events({
             }
 
 					console.log(captchaArray);
+					
           // Loop through the array to add .src to images and check whether they are free or paid
-
           for( j = 0, i = 1; i <= captchaLimit; i++, j++ ) {
-             document.getElementById("imageid" + i).src = "img/tests/" + captchaArray[j];
+             document.getElementById("imageid" + i).src = captchaArray[j];
            };
 
 	},
