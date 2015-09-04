@@ -4,7 +4,7 @@
   margin: 100px auto 200px auto;
   background: white;
   border-radius: 6px;
-  width: 750px;
+  width: 650px;
   border: 10px solid #1E88E5;
   box-shadow: 2px 2px 2px #0D47A1;
 }
@@ -57,6 +57,10 @@
   font-size: 18px;
 }
 
+.advertiser-buttons #keywordSubmit {
+  margin-bottom: 5%;
+}
+
 .advertiser-buttons input {
   background: #2979FF;
   background-image: -webkit-linear-gradient(top, #2979FF, #2962FF);
@@ -91,4 +95,18 @@
 
 .webInfo {
   margin-bottom: 3%;
+}
+
+.dropDown {
+  padding: 2%;
+  margin-bottom: 2%;
+}
+
+#testPrompt {
+  margin-bottom: 2%;
+}
+
+#testUpload {
+  padding-bottom: 15%;
+  margin-bottom: 5%;
 }
