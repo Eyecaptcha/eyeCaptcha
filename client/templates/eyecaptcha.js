@@ -1,10 +1,10 @@
 // Selected variables to allow select/deselect functionality for image buttons
-var selected1 = 0;
-var selected2 = 0;
-var selected3 = 0;
-var selected4 = 0;
-var selected5 = 0;
-var selected6 = 0;
+var selected1 = false;
+var selected2 = false;
+var selected3 = false;
+var selected4 = false;
+var selected5 = false;
+var selected6 = false;
 
 // Wrap all of the EyeCaptcha Test code in a click function
 Template.eyecaptchaContainer.events({
@@ -13,22 +13,24 @@ Template.eyecaptchaContainer.events({
 
     // Reset selectedImages array and selected variables
     Session.set('selectedImages', []);
-		selected1 = 0;
-		selected2 = 0;
-		selected3 = 0;
-		selected4 = 0;
-		selected5 = 0;
-		selected6 = 0;
-		console.log(selected1);
-
-		if(selected1 % 2 == 0 || selected1 == 0){
-			event.target.style.border = "5px solid #BBDEFB";
-			event.target.style.borderRadius = "5px";
-		}
-		else{
-			event.target.style.border = "5px solid #1E88E5";
-			event.target.style.borderRadius = "5px";
-		}
+		selected1 = false;
+		selected2 = false;
+		selected3 = false;
+		selected4 = false;
+		selected5 = false;
+		selected6 = false;
+		document.getElementById("imageid1").style.border = "5px solid #bbdefb";
+		document.getElementById("imageid1").style.borderRadius = "5px";
+		document.getElementById("imageid2").style.border = "5px solid #bbdefb";
+		document.getElementById("imageid2").style.borderRadius = "5px";
+		document.getElementById("imageid3").style.border = "5px solid #bbdefb";
+		document.getElementById("imageid3").style.borderRadius = "5px";
+		document.getElementById("imageid4").style.border = "5px solid #bbdefb";
+		document.getElementById("imageid4").style.borderRadius = "5px";
+		document.getElementById("imageid5").style.border = "5px solid #bbdefb";
+		document.getElementById("imageid5").style.borderRadius = "5px";
+		document.getElementById("imageid6").style.border = "5px solid #bbdefb";
+		document.getElementById("imageid6").style.borderRadius = "5px";
 
           // Declare captchaArray variable to store image paths in array
           var captchaArray = [];
@@ -114,76 +116,79 @@ Template.eyecaptchaContainer.events({
 	},
 
 	'click #imageid1': function(event) {
-		selected1 += 1;
-		console.log(selected1);
+		if(selected1==false){
+      selected1=true;
+      event.target.style.border = "5px solid #1E88E5";
+      event.target.style.borderRadius = "5px";
+    }
+    else{
+      selected1=false;
+      event.target.style.border = "5px solid #BBDEFB";
+      event.target.style.borderRadius = "5px";
+    }
 	},
 	'click #imageid2': function(event) {
-		selected2 += 1;
-		if(selected2 % 2 == 0 || selected2 == 0){
-			event.target.style.border = "5px solid #BBDEFB";
-			event.target.style.borderRadius = "5px";
-		}
-		else{
-			event.target.style.border = "5px solid #1E88E5";
-			event.target.style.borderRadius = "5px";
-		}
+		if(selected2==false){
+      selected2=true;
+      event.target.style.border = "5px solid #1E88E5";
+      event.target.style.borderRadius = "5px";
+    }
+    else{
+      selected2=false;
+      event.target.style.border = "5px solid #BBDEFB";
+      event.target.style.borderRadius = "5px";
+    }
 	},
 	'click #imageid3': function(event) {
-		selected3 += 1;
-		if(selected3 % 2 == 0 || selected3 == 0){
-			event.target.style.border = "5px solid #BBDEFB";
-			event.target.style.borderRadius = "5px";
-		}
-		else{
-			event.target.style.border = "5px solid #1E88E5";
-			event.target.style.borderRadius = "5px";
-		}
+		if(selected3==false){
+      selected3=true;
+      event.target.style.border = "5px solid #1E88E5";
+      event.target.style.borderRadius = "5px";
+    }
+    else{
+      selected3=false;
+      event.target.style.border = "5px solid #BBDEFB";
+      event.target.style.borderRadius = "5px";
+    }
 	},
 	'click #imageid4': function(event) {
-		selected4 += 1;
-		if(selected4 % 2 == 0 || selected4 == 0){
-			event.target.style.border = "5px solid #BBDEFB";
-			event.target.style.borderRadius = "5px";
-		}
-		else{
-			event.target.style.border = "5px solid #1E88E5";
-			event.target.style.borderRadius = "5px";
-		}
+		if(selected4==false){
+      selected4=true;
+      event.target.style.border = "5px solid #1E88E5";
+      event.target.style.borderRadius = "5px";
+    }
+    else{
+      selected4=false;
+      event.target.style.border = "5px solid #BBDEFB";
+      event.target.style.borderRadius = "5px";
+    }
 	},
 	'click #imageid5': function(event) {
-		selected5 += 1;
-		if(selected5 % 2 == 0 || selected5 == 0){
-			event.target.style.border = "5px solid #BBDEFB";
-			event.target.style.borderRadius = "5px";
-		}
-		else{
-			event.target.style.border = "5px solid #1E88E5";
-			event.target.style.borderRadius = "5px";
-		}
+		if(selected5==false){
+      selected5=true;
+      event.target.style.border = "5px solid #1E88E5";
+      event.target.style.borderRadius = "5px";
+    }
+    else{
+      selected5=false;
+      event.target.style.border = "5px solid #BBDEFB";
+      event.target.style.borderRadius = "5px";
+    }
 	},
 	'click #imageid6': function(event) {
-		selected6 += 1;
-		if(selected6 % 2 == 0 || selected6 == 0){
-			event.target.style.border = "5px solid #BBDEFB";
-			event.target.style.borderRadius = "5px";
-		}
-		else{
-			event.target.style.border = "5px solid #1E88E5";
-			event.target.style.borderRadius = "5px";
-		}
+		if(selected6==false){
+      selected6=true;
+      event.target.style.border = "5px solid #1E88E5";
+      event.target.style.borderRadius = "5px";
+    }
+    else{
+      selected6=false;
+      event.target.style.border = "5px solid #BBDEFB";
+      event.target.style.borderRadius = "5px";
+    }
 	}
 });
 
-Template.img11.events( function() {
-	if(selected1 % 2 == 0 || selected1 == 0){
-		event.target.style.border = "5px solid #BBDEFB";
-		event.target.style.borderRadius = "5px";
-	}
-	else{
-		event.target.style.border = "5px solid #1E88E5";
-		event.target.style.borderRadius = "5px";
-	}
-});
 Template.eyecaptchaContainer.events({
 	'click #submitTest': function(event){
 		var checkCount = Session.get('selectedImages');
