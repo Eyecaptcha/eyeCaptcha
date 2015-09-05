@@ -1,7 +1,7 @@
 Meteor.subscribe('companies');
 Meteor.subscribe('tests');
 
-// Selected variables to allow select/deselect functionality for image buttons
+// Selected variables to allow select/deselect functionality for image buttons /
 var select1 = false;
 var select2 = false;
 var select3 = false;
@@ -47,9 +47,11 @@ Template.addNewImages.events({
   }
 });
 
-// Generate company images before they create a test
+// Generate company images before they create a test //////////////////////////
 Template.addNewTest.events({
   'change #compName': function(event, template) {
+
+    event.preventDefault;
 
     var compimgArray = [];
 
@@ -76,8 +78,79 @@ Template.addNewTest.events({
   }
 });
 
-//Selecting/Unselecting Company Images
+// Upload new test ////////////////////////////////////////////////////////////
 Template.addNewTest.events({
+  'click .newTestSubmit': function(event, template) {
+
+    // Get the image paths that have been selected
+    var imgArray = [];
+    if(select1==true){
+      var imgsrc = document.getElementById("imgid1").src;
+      var imgsrcarray = imgsrc.split("/");
+      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+    } else {};
+    if(select2==true){
+      var imgsrc = document.getElementById("imgid2").src;
+      var imgsrcarray = imgsrc.split("/");
+      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+    } else {};
+    if(select3==true){
+      var imgsrc = document.getElementById("imgid3").src;
+      var imgsrcarray = imgsrc.split("/");
+      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+    } else {};
+    if(select4==true){
+      var imgsrc = document.getElementById("imgid4").src;
+      var imgsrcarray = imgsrc.split("/");
+      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+    } else {};
+    if(select5==true){
+      var imgsrc = document.getElementById("imgid5").src;
+      var imgsrcarray = imgsrc.split("/");
+      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+    } else {};
+    if(select6==true){
+      var imgsrc = document.getElementById("imgid6").src;
+      var imgsrcarray = imgsrc.split("/");
+      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+    } else {};
+    if(select7==true){
+      var imgsrc = document.getElementById("imgid7").src;
+      var imgsrcarray = imgsrc.split("/");
+      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+    } else {};
+    if(select8==true){
+      var imgsrc = document.getElementById("imgid8").src;
+      var imgsrcarray = imgsrc.split("/");
+      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+    } else {};
+    if(select9==true){
+      var imgsrc = document.getElementById("imgid9").src;
+      var imgsrcarray = imgsrc.split("/");
+      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+    } else {};
+    if(select10==true){
+      var imgsrc = document.getElementById("imgid10").src;
+      var imgsrcarray = imgsrc.split("/");
+      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+    } else {};
+
+    // Get variable that contains the prompt text
+    var prompt = document.getElementById('testPrompt').value;
+    console.log(prompt);
+
+    // Get company name from select field
+    var company = document.getElementById('compName');
+    var strCompany = company.options[company.selectedIndex].value;
+    console.log(strCompany);
+
+    // Push all relevant info into Tests collection
+    var testCount = Tests.find().count() + 1;
+    Tests.insert( { testKey : testCount, text : prompt, company : strCompany, images : imgArray });
+
+    location.reload();
+  },
+
   'click #imgid1': function(event) {
     if(select1==false){
       select1=true;
@@ -199,61 +272,3 @@ Template.addNewTest.events({
     }
   },
 });
-
-// // Upload new test
-// Template.addNewTest.events({
-//   'click .newTestSubmit': function(event, template) {
-//
-//     // Get variable that contains the images being uploaded
-//     var input = document.getElementById('testUpload');
-//
-//     // Get variable that contains the prompt text
-//     var prompt = document.getElementById('testPrompt').value;
-//     console.log(prompt);
-//
-//     // Get company name from select field
-//     var company = document.getElementById('companyName');
-//     var strCompany = company.options[company.selectedIndex].value;
-//     console.log(strCompany);
-//
-//     // Get matching company's ID from Companies collection
-//     var companyID = Companies.findOne( { company: strCompany } );
-//
-//     //Loop through adding images to Advertisers collection, also store keys in Tests Mongo colllection
-//     for (var i = 0; i < input.files.length; i++) {
-//
-//       var file = document.getElementById('testUpload').files[i];
-//       var fsFile = new FS.File(file);
-//       var count = Advertisers.find().count() + 1;
-//       console.log(count);
-//       fsFile.freeKey = count;
-//
-//       // Get the copies.free.key for the image, this statement is the only way to get just the key
-//       var imgKey = fsFile.name();
-//       console.log(imgKey);
-//       var imgArray = "prompt.img" + i;
-//
-//       Advertisers.insert(fsFile, function(error, fileObject) {
-//         if (error) {
-//           showErrorMessage(error.reason);
-//         } else {
-//           console.log(fsFile);
-//
-//         }
-//       });
-//
-//       var imgKey = Advertisers.findOne( { freeKey : count } );
-//
-//       // Get the copies.free.key for the image, this statement is the only way to get just the key
-//         if (imgKey) {
-//            var imgPath = imgKey.copies.free.key;
-//
-//            console.log(imgPath);
-//         }
-//
-//       Tests.insert({ imgArray: imgKey, "company": companyID, "prompt": prompt })
-//
-//     };
-//
-//   }
-// });
