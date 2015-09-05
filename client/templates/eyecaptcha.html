@@ -17,7 +17,7 @@
 		</div>
 		<div class="row">
 			<!-- Prompt goes here -->
-			<div class="col-md-12 prompt">{{> adPrompt}}</div>
+			<div class="col-md-12 prompt"><p id="promptBox"></p></div>
 		</div>
 		<!-- Images row 1 -->
 		<div class="row">
@@ -43,7 +43,7 @@
 		<!-- Buttons -->
 		<div class="row eyecaptcha-buttons">
 			<div class="col-md-4">
-				<button type="button" class="btn btn-primary generate" id="generateTest">Generate</button>
+				<button type="button" class="btn btn-primary generate" id="generateTest" onload="generator(event)">Generate</button>
 			</div>
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
@@ -51,11 +51,6 @@
 			</div>
 		</div>
 	</div>
-</template>
-
-<!-- Ad Prompt template -->
-<template name="adPrompt">
-	  <p id="promptBox">Please click Generate to create a new EyeCaptcha Test.</p>
 </template>
 
 
