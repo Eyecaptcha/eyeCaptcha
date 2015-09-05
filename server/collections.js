@@ -44,11 +44,6 @@ Advertisers.allow({
 	}
 });
 
-//COMPANIES COLLECTION (MONGO COLLECTION REFERS TO ADVERTISERS COLLECTIONFS)
-Meteor.publish('Companies', function(){
-	return Companies.find();
-});
-
 //TESTS COLLECTION (MONGO COLLECTION REFERS TO COMPANIES COLLECTION)
 Meteor.publish('Tests', function(){
 	return Tests.find();
