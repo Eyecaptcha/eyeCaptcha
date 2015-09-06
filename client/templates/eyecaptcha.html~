@@ -20,7 +20,7 @@
 			<div class="col-md-12 prompt">{{> adPrompt}}</div>
 		</div>
 		<!-- Images row 1 -->
-		<div class="row marginBottom">
+		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-10">
 				{{> img11}}
@@ -58,10 +58,6 @@
 	  <p id="promptBox">Please click Generate to create a new EyeCaptcha Test.</p>
 </template>
 
-<!-- Image templates -->
-<!--<template name="img11">
-  <img class="images" id="imageid1" src="img/free/{{eyecaptcha11}}">
-</template>-->
 
 <template name="img11">
   <img class="images" id="imageid1" src="icons/EyeCaptchaNavSquare.png">

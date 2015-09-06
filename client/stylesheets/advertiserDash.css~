@@ -57,7 +57,7 @@
   font-size: 18px;
 }
 
-.advertiser-buttons #keywordSubmit {
+#keywordSubmit {
   margin-bottom: 5%;
 }
 
@@ -109,4 +109,25 @@
 #testUpload {
   padding-bottom: 15%;
   margin-bottom: 5%;
+}
+
+#imgUpload {
+  padding-bottom: 15%;
+  margin-bottom: 5%;
+}
+
+.imgs {
+  width: 95px;
+  height: 95px;
+  margin: 5px 3px;
+  border-radius: 5px;
+  border: 5px solid #BBDEFB;
+}
+
+.newTestSubmit {
+  margin-top: 20px;
+}
+
+.newImageSubmit {
+  margin-top: 20px;
 }

@@ -111,6 +111,11 @@
   margin-bottom: 5%;
 }
 
+#imgUpload {
+  padding-bottom: 15%;
+  margin-bottom: 5%;
+}
+
 .imgs {
   width: 95px;
   height: 95px;
@@ -121,4 +126,8 @@
 
 .newTestSubmit {
   margin-top: 20px;
+}
+
+.newImageSubmit {
+  
 }

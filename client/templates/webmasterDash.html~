@@ -99,10 +99,10 @@
 				{{solved}}
 			</div>
 			<div class="col-md-2 lineup">
-				100
+				{{failed}}
 			</div>
 			<div class="col-md-2 lineup">
-				20%
+				{{success}}%
 			</div>
 			<div class="col-md-2 lineup">
 				{{cost}}

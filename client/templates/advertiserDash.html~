@@ -59,7 +59,22 @@
 			</div>
 		</div>
 
-<!-- Add New -->
+<!-- Add New Images by Company -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading website-panel">
+						<h3 class="panel-title">Add Images for Company:</h3>
+					</div>
+					<div class="panel-body webInfo">
+						<!-- Here you can add new EyeCaptcha test -->
+						{{> addNewImages}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- Add New Tests -->
 		<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-default">
@@ -89,7 +104,7 @@
 			</div>
 		</div>
 		<div class = "row">
-			<div class="col-md-12 advertiser-buttons lineup">
+			<div class="col-md-12 advertiser-buttons lineup" id="keywordSubmit">
 				<button type="button" class="btn btn-primary keywordsUpdate">Save</button>
 			</div>
 		</div>
@@ -172,10 +187,46 @@
 
 </template>
 
+<!-- Add New IMAGES template-->
+<template name="addNewImages">
+
+	<form class="imgUploadForm">
+		<div class="row">
+			<div class="col-md-3">
+				<h5>Company:</h5>
+			</div>
+			<div class="col-md-9">
+				<select id="companyName" class="dropDown">
+					<option value="Bouqs">Bouqs</option>
+					<option value="Coca-Cola">Coca-Cola</option>
+					<option value="Nike">Nike</option>
+					<option value="North Face">North Face</option>
+					<option value="Patagonia">Patagonia</option>
+					<option value="Snickers">Snickers</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h5>Select Image:</h5>
+			</div>
+			<div class="col-md-9">
+				<div class="input-group">
+					<input type="file" class="form-control testSubmit" id="imgUpload" name="companyImage" placeholder="Select Images..." multiple>
+				</div>
+			</div>
+		</div>
+		<div class = "row">
+			<div class="col-md-12 advertiser-buttons lineup">
+				<button type="button" class="btn btn-primary newImageSubmit">Save</button>
+			</div>
+		</div>
+	</form>
+
+</template>
+
 <!-- Add New Test template-->
 <template name="addNewTest">
-
-<!-- {{> companyInsert}} -->
 
 	<form class="testUploadForm">
 		<div class="row">
@@ -183,7 +234,8 @@
 				<h5>Company:</h5>
 			</div>
 			<div class="col-md-9">
-				<select id="companyName" class="dropDown">
+				<select id="compName" class="dropDown">
+					<option value="---">---</option>
 					<option value="Bouqs">Bouqs</option>
 					<option value="Coca-Cola">Coca-Cola</option>
 					<option value="Nike">Nike</option>
@@ -206,9 +258,16 @@
 				<h5>Select Image:</h5>
 			</div>
 			<div class="col-md-9">
-				<div class="input-group">
-					<input type="file" class="form-control testSubmit" id="testUpload" name="companyImage" placeholder="Select Images..." multiple>
-				</div>
+				{{> img1}}
+				{{> img2}}
+				{{> img3}}
+				{{> img4}}
+				{{> img5}}
+				{{> img6}}
+				{{> img7}}
+				{{> img8}}
+				{{> img9}}
+				{{> img10}}
 			</div>
 		</div>
 		<div class = "row">
@@ -220,10 +279,42 @@
 
 </template>
 
-<template name="companyInsert">
+<template name="img1">
+  <img class="imgs" id="imgid1" src="">
+</template>
 
-	<form class="company-insert">
-		<input type="text" class="form-control" id="companyName" name="text" placeholder="Enter company name here">
-	</form>
+<template name="img2">
+	<img class="imgs" id="imgid2" src="">
+</template>
 
+<template name="img3">
+	<img class="imgs" id="imgid3" src="">
+</template>
+
+<template name="img4">
+	<img class="imgs" id="imgid4" src="">
+</template>
+
+<template name="img5">
+	<img class="imgs" id="imgid5" src="">
+</template>
+
+<template name="img6">
+	<img class="imgs" id="imgid6" src="">
+</template>
+
+<template name="img7">
+	<img class="imgs" id="imgid7" src="">
+</template>
+
+<template name="img8">
+	<img class="imgs" id="imgid8" src="">
+</template>
+
+<template name="img9">
+	<img class="imgs" id="imgid9" src="">
+</template>
+
+<template name="img10">
+	<img class="imgs" id="imgid10" src="">
 </template>
