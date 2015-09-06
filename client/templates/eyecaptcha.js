@@ -20,17 +20,11 @@ Template.eyecaptchaContainer.events({
 		selected5 = false;
 		selected6 = false;
 		document.getElementById("imageid1").style.border = "5px solid #bbdefb";
-		document.getElementById("imageid1").style.borderRadius = "5px";
 		document.getElementById("imageid2").style.border = "5px solid #bbdefb";
-		document.getElementById("imageid2").style.borderRadius = "5px";
 		document.getElementById("imageid3").style.border = "5px solid #bbdefb";
-		document.getElementById("imageid3").style.borderRadius = "5px";
 		document.getElementById("imageid4").style.border = "5px solid #bbdefb";
-		document.getElementById("imageid4").style.borderRadius = "5px";
 		document.getElementById("imageid5").style.border = "5px solid #bbdefb";
-		document.getElementById("imageid5").style.borderRadius = "5px";
 		document.getElementById("imageid6").style.border = "5px solid #bbdefb";
-		document.getElementById("imageid6").style.borderRadius = "5px";
 
           // Declare captchaArray variable to store image paths in array
           var captchaArray = [];
@@ -42,7 +36,6 @@ Template.eyecaptchaContainer.events({
 
           // adImages variable calls randomIntFromInterval function with values 1, 6
           var adImages = randomIntFromInterval(1,5);
-          adCount = adImages;
 
           // Declare limit of images to 6, calculate # of freeImages
           var captchaLimit = 6;
@@ -102,104 +95,143 @@ Template.eyecaptchaContainer.events({
 
 	},
 
-	'click .images': function(event, template) {
-
-		var selectedImageId = event.target.id;
-		var selectedImages = Session.get('selectedImages');
-
-		if (selectedImages.indexOf(selectedImageId) == -1) {
-			selectedImages.push(event.target.src);
-		}
-
-		Session.set('selectedImages', selectedImages);
-		console.log(Session.get('selectedImages'));
-	},
-
 	'click #imageid1': function(event) {
 		if(selected1==false){
       selected1=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       selected1=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
 	},
 	'click #imageid2': function(event) {
 		if(selected2==false){
       selected2=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       selected2=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
 	},
 	'click #imageid3': function(event) {
 		if(selected3==false){
       selected3=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       selected3=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
 	},
 	'click #imageid4': function(event) {
 		if(selected4==false){
       selected4=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       selected4=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
 	},
 	'click #imageid5': function(event) {
 		if(selected5==false){
       selected5=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       selected5=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
 	},
 	'click #imageid6': function(event) {
 		if(selected6==false){
       selected6=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       selected6=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
 	}
 });
 
 Template.eyecaptchaContainer.events({
 	'click #submitTest': function(event){
-		var checkCount = Session.get('selectedImages');
-		if ((checkCount.length == adCount) && (correct == true)) {
-			console.log("SUCCESS!");
-			alert("The test was passed.");
+		var imgArray = [];
+		var adImgCount = 0;
+		var freeImgCount = 0;
+		var correctAdCount = 0;
+
+    if(selected1==true){
+      var imgsrc = document.getElementById("imageid1").src;
+      imgArray.push(imgsrc);
+			if(imgsrc.indexOf("/free/") > -1){
+				freeImgCount += 1;
+			} else if (imgsrc.indexOf("/advertisers/") > -1) {
+				adImgCount += 1;
+			}
+    } else {};
+    if(selected2==true){
+      var imgsrc = document.getElementById("imageid2").src;
+      imgArray.push(imgsrc);
+			if(imgsrc.indexOf("/free/") > -1){
+				freeImgCount += 1;
+			} else if (imgsrc.indexOf("/advertisers/") > -1) {
+				adImgCount += 1;
+			}
+    } else {};
+    if(selected3==true){
+      var imgsrc = document.getElementById("imageid3").src;
+      imgArray.push(imgsrc);
+			if(imgsrc.indexOf("/free/") > -1){
+				freeImgCount += 1;
+			} else if (imgsrc.indexOf("/advertisers/") > -1) {
+				adImgCount += 1;
+			}
+    } else {};
+    if(selected4==true){
+      var imgsrc = document.getElementById("imageid4").src;
+      imgArray.push(imgsrc);
+			if(imgsrc.indexOf("/free/") > -1){
+				freeImgCount += 1;
+			} else if (imgsrc.indexOf("/advertisers/") > -1) {
+				adImgCount += 1;
+			}
+    } else {};
+    if(selected5==true){
+      var imgsrc = document.getElementById("imageid5").src;
+      imgArray.push(imgsrc);
+			if(imgsrc.indexOf("/free/") > -1){
+				freeImgCount += 1;
+			} else if (imgsrc.indexOf("/advertisers/") > -1) {
+				adImgCount += 1;
+			}
+    } else {};
+    if(selected6==true){
+      var imgsrc = document.getElementById("imageid6").src;
+      imgArray.push(imgsrc);
+			if(imgsrc.indexOf("/free/") > -1){
+				freeImgCount += 1;
+			} else if (imgsrc.indexOf("/advertisers/") > -1) {
+				adImgCount += 1;
+			}
+    } else {};
+
+		for ( var i = 1; i <= 6; i++ ) {
+			var imgPath = document.getElementById("imageid" + i).src;
+			if(imgPath.indexOf("/advertisers/") > -1){
+				correctAdCount += 1;
+			} else {}
+		};
+
+		if((adImgCount == correctAdCount) && (freeImgCount == 0)) {
+			alert("The test was successfully completed!");
 		} else {
-			console.log("FAILURE!");
 			alert("The test was failed.");
 		}
-		correct = true;
+
 		document.location.reload(true);
 	}
 });

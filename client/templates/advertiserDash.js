@@ -49,10 +49,34 @@ Template.addNewImages.events({
 
 // Generate company images before they create a test //////////////////////////
 Template.addNewTest.events({
+
+});
+
+// Upload new test ////////////////////////////////////////////////////////////
+Template.addNewTest.events({
   'change #compName': function(event, template) {
 
     event.preventDefault;
-
+    var select1 = false;
+    var select2 = false;
+    var select3 = false;
+    var select4 = false;
+    var select5 = false;
+    var select6 = false;
+    var select7 = false;
+    var select8 = false;
+    var select9 = false;
+    var select10 = false;
+    document.getElementById("imgid1").style.border = "5px solid #bbdefb";
+		document.getElementById("imgid2").style.border = "5px solid #bbdefb";
+		document.getElementById("imgid3").style.border = "5px solid #bbdefb";
+		document.getElementById("imgid4").style.border = "5px solid #bbdefb";
+		document.getElementById("imgid5").style.border = "5px solid #bbdefb";
+		document.getElementById("imgid6").style.border = "5px solid #bbdefb";
+    document.getElementById("imgid7").style.border = "5px solid #bbdefb";
+    document.getElementById("imgid8").style.border = "5px solid #bbdefb";
+    document.getElementById("imgid9").style.border = "5px solid #bbdefb";
+    document.getElementById("imgid10").style.border = "5px solid #bbdefb";
     var compimgArray = [];
 
     // Get the selected company
@@ -75,11 +99,8 @@ Template.addNewTest.events({
        document.getElementById("imgid" + i).src = compimgArray[j];
      };
 
-  }
-});
-
-// Upload new test ////////////////////////////////////////////////////////////
-Template.addNewTest.events({
+  },
+  
   'click .newTestSubmit': function(event, template) {
 
     // Get the image paths that have been selected
@@ -155,120 +176,100 @@ Template.addNewTest.events({
     if(select1==false){
       select1=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       select1=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
   },
   'click #imgid2': function(event) {
     if(select2==false){
       select2=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       select2=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
   },
   'click #imgid3': function(event) {
     if(select3==false){
       select3=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       select3=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
   },
   'click #imgid4': function(event) {
     if(select4==false){
       select4=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       select4=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
   },
   'click #imgid5': function(event) {
     if(select5==false){
       select5=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       select5=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
   },
   'click #imgid6': function(event) {
     if(select6==false){
       select6=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       select6=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
   },
   'click #imgid7': function(event) {
     if(select7==false){
       select7=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       select7=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
   },
   'click #imgid8': function(event) {
     if(select8==false){
       select8=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       select8=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
   },
   'click #imgid9': function(event) {
     if(select9==false){
       select9=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       select9=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
   },
   'click #imgid10': function(event) {
     if(select10==false){
       select10=true;
       event.target.style.border = "5px solid #1E88E5";
-      event.target.style.borderRadius = "5px";
     }
     else{
       select10=false;
       event.target.style.border = "5px solid #BBDEFB";
-      event.target.style.borderRadius = "5px";
     }
   },
 });
