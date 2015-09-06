@@ -98,7 +98,7 @@
 					</div>
 					<div class="panel-body">
 						<!-- Keywords go here -->
-						<textarea class="form-control" rows="3" placeholder="Soda, soft drink, refreshing"></textarea>
+						<textarea class="form-control" rows="2" placeholder="Soda, soft drink, refreshing"></textarea>
 					</div>
 				</div>
 			</div>
@@ -167,23 +167,47 @@
 
 <!-- Current EyeCaptcha template -->
 <template name="current">
-
+	
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-3">
+			<h5>Company:</h5>
+		</div>
+		<div class="col-md-9">
+			<select id="companyName" class="dropDown">
+				<option value="Bouqs">Bouqs</option>
+				<option value="Coca-Cola">Coca-Cola</option>
+				<option value="Nike">Nike</option>
+				<option value="North Face">North Face</option>
+				<option value="Patagonia">Patagonia</option>
+				<option value="Snickers">Snickers</option>
+			</select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			Prompt:
+		</div>
+		<div class="col-md-9">
 			Refreshing classic drink you can buy now for only 99 cents
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-4">
-			<img src="img/Paid/CocaCola/coke1.jpg" class="images lineup">
+			<div class="col-md-3">
+				<h5>Images:</h5>
+			</div>
+			<div class="col-md-9">
+				{{> img11}}
+				{{> img12}}
+				{{> img13}}
+				{{> img14}}
+				{{> img15}}
+				{{> img16}}
+				{{> img17}}
+				{{> img18}}
+				{{> img19}}
+				{{> img20}}
+			</div>
 		</div>
-		<div class="col-md-4">
-			<img src="img/Paid/CocaCola/coke2.jpg" class="images lineup">
-		</div>
-		<div class="col-md-4">
-			<img src="img/Paid/CocaCola/coke3.jpg" class="images lineup">
-		</div>
-	</div>
 
 </template>
 
