@@ -167,13 +167,14 @@
 
 <!-- Current EyeCaptcha template -->
 <template name="current">
-	
+
 	<div class="row">
 		<div class="col-md-3">
 			<h5>Company:</h5>
 		</div>
 		<div class="col-md-9">
-			<select id="companyName" class="dropDown">
+			<select id="currentCompany" class="dropDown">
+				<option value="---">---</option>
 				<option value="Bouqs">Bouqs</option>
 				<option value="Coca-Cola">Coca-Cola</option>
 				<option value="Nike">Nike</option>
@@ -188,7 +189,7 @@
 			Prompt:
 		</div>
 		<div class="col-md-9">
-			Refreshing classic drink you can buy now for only 99 cents
+			<p id="currentPrompt"></p>
 		</div>
 	</div>
 	<div class="row">
@@ -196,16 +197,16 @@
 				<h5>Images:</h5>
 			</div>
 			<div class="col-md-9">
-				<!--{{> img11}}
-				{{> img12}}
-				{{> img13}}
-				{{> img14}}
-				{{> img15}}
-				{{> img16}}
-				{{> img17}}
-				{{> img18}}
-				{{> img19}}
-				{{> img20}}-->
+				{{> current1}}
+				{{> current2}}
+				{{> current3}}
+				{{> current4}}
+				{{> current5}}
+				{{> current6}}
+				{{> current7}}
+				{{> current8}}
+				{{> current9}}
+				{{> current10}}
 			</div>
 		</div>
 
@@ -341,4 +342,45 @@
 
 <template name="img10">
 	<img class="imgs" id="imgid10" src="">
+</template>
+
+
+<template name="current1">
+  <img class="imgs" id="currentid1" src="">
+</template>
+
+<template name="current2">
+	<img class="imgs" id="currentid2" src="">
+</template>
+
+<template name="current3">
+	<img class="imgs" id="currentid3" src="">
+</template>
+
+<template name="current4">
+	<img class="imgs" id="currentid4" src="">
+</template>
+
+<template name="current5">
+	<img class="imgs" id="currentid5" src="">
+</template>
+
+<template name="current6">
+	<img class="imgs" id="currentid6" src="">
+</template>
+
+<template name="current7">
+	<img class="imgs" id="currentid7" src="">
+</template>
+
+<template name="current8">
+	<img class="imgs" id="currentid8" src="">
+</template>
+
+<template name="current9">
+	<img class="imgs" id="currentid9" src="">
+</template>
+
+<template name="current10">
+	<img class="imgs" id="currentid10" src="">
 </template>

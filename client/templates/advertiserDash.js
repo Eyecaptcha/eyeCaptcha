@@ -57,9 +57,34 @@ Template.addNewImages.events({
   }
 });
 
-// Generate company images before they create a test //////////////////////////
-Template.addNewTest.events({
+// Generate company images for a current test //////////////////////////
+Template.current.events({
+  'change #currentCompany' : function(event, template) {
 
+    var compimgArray = [];
+
+    // Get the selected company
+    var company = document.getElementById('currentCompany');
+    var strCompany = company.options[company.selectedIndex].value;
+
+    // Find the images where the company equals the selection
+    var compimg = Tests.findOne( { company : strCompany } ).images;
+    console.log(compimg);
+
+    // Push the path into array
+    for( var i = 0; i < compimg.length; i++ ) {
+      var imgurl = compimg[i];
+      compimgArray.push(imgurl);
+    };
+
+    // Loop through to add .src to images
+    for( j = 0, i = 1; i <= compimg.length; i++, j++ ) {
+       document.getElementById("currentid" + i).src = compimgArray[j];
+     };
+
+     var testPrompt = Tests.findOne( { company : strCompany } )['text'];
+     document.getElementById('currentPrompt').innerHTML = testPrompt;
+  }
 });
 
 // Upload new test ////////////////////////////////////////////////////////////
@@ -76,17 +101,6 @@ Template.addNewTest.events({
     var select7 = false;
     var select8 = false;
     var select9 = false;
-    var select10 = false;
-    var select11 = false;
-	var select12 = false;
-	var select13 = false;
-	var select14 = false;
-	var select15 = false;
-	var select16 = false;
-	var select17 = false;
-	var select18 = false;
-	var select19 = false;
-	var select20 = false;
     document.getElementById("imgid1").style.border = "5px solid #bbdefb";
 		document.getElementById("imgid2").style.border = "5px solid #bbdefb";
 		document.getElementById("imgid3").style.border = "5px solid #bbdefb";
@@ -97,16 +111,6 @@ Template.addNewTest.events({
     document.getElementById("imgid8").style.border = "5px solid #bbdefb";
     document.getElementById("imgid9").style.border = "5px solid #bbdefb";
     document.getElementById("imgid10").style.border = "5px solid #bbdefb";
-	/*document.getElementById("imgid11").style.border = "5px solid #bbdefb";
-		document.getElementById("imgid12").style.border = "5px solid #bbdefb";
-		document.getElementById("imgid13").style.border = "5px solid #bbdefb";
-		document.getElementById("imgid14").style.border = "5px solid #bbdefb";
-		document.getElementById("imgid15").style.border = "5px solid #bbdefb";
-		document.getElementById("imgid16").style.border = "5px solid #bbdefb";
-    document.getElementById("imgid17").style.border = "5px solid #bbdefb";
-    document.getElementById("imgid18").style.border = "5px solid #bbdefb";
-    document.getElementById("imgid19").style.border = "5px solid #bbdefb";
-    document.getElementById("imgid20").style.border = "5px solid #bbdefb";*/
     var compimgArray = [];
 
     // Get the selected company
@@ -121,7 +125,6 @@ Template.addNewTest.events({
     for( var i = 0; i < compimg.length; i++ ) {
       var imgurl = compimg[i];
       compimgArray.push(imgurl.url());
-
     };
 
     // Loop through to add .src to images
@@ -130,7 +133,7 @@ Template.addNewTest.events({
      };
 
   },
-  
+
   'click .newTestSubmit': function(event, template) {
 
     // Get the image paths that have been selected
@@ -185,56 +188,7 @@ Template.addNewTest.events({
       var imgsrcarray = imgsrc.split("/");
       imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
     } else {};
-/*	if(select11==true){
-      var imgsrc = document.getElementById("imgid11").src;
-      var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
-    } else {};
-    if(select12==true){
-      var imgsrc = document.getElementById("imgid12").src;
-      var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
-    } else {};
-    if(select13==true){
-      var imgsrc = document.getElementById("imgid13").src;
-      var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
-    } else {};
-    if(select14==true){
-      var imgsrc = document.getElementById("imgid14").src;
-      var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
-    } else {};
-    if(select15==true){
-      var imgsrc = document.getElementById("imgid15").src;
-      var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
-    } else {};
-    if(select16==true){
-      var imgsrc = document.getElementById("imgid16").src;
-      var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
-    } else {};
-    if(select17==true){
-      var imgsrc = document.getElementById("imgid17").src;
-      var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
-    } else {};
-    if(select18==true){
-      var imgsrc = document.getElementById("imgid18").src;
-      var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
-    } else {};
-    if(select19==true){
-      var imgsrc = document.getElementById("imgid19").src;
-      var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
-    } else {};
-    if(select20==true){
-      var imgsrc = document.getElementById("imgid20").src;
-      var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
-    } else {};*/
+
 
     // Get variable that contains the prompt text
     var prompt = document.getElementById('testPrompt').value;
