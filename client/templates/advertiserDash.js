@@ -1,6 +1,17 @@
 Meteor.subscribe('companies');
 Meteor.subscribe('tests');
 
+Template.website.helpers({
+  tests: function() {
+    return Tests.find();
+  }
+});
+Template.website.onRendered(function () {
+  var successCount = document.getElementsByClassName('successCount').innerHTML;
+  console.log(Number(successCount));
+  document.getElementsByClassName('costCalculator').innerHTML = successCount * .25;
+});
+
 // Selected variables to allow select/deselect functionality for image buttons /
 var select1 = false;
 var select2 = false;
@@ -12,16 +23,6 @@ var select7 = false;
 var select8 = false;
 var select9 = false;
 var select10 = false;
-var select11 = false;
-var select12 = false;
-var select13 = false;
-var select14 = false;
-var select15 = false;
-var select16 = false;
-var select17 = false;
-var select18 = false;
-var select19 = false;
-var select20 = false;
 
 // Add images for a company
 Template.addNewImages.events({
@@ -101,6 +102,7 @@ Template.addNewTest.events({
     var select7 = false;
     var select8 = false;
     var select9 = false;
+    var select10 = false;
     document.getElementById("imgid1").style.border = "5px solid #bbdefb";
 		document.getElementById("imgid2").style.border = "5px solid #bbdefb";
 		document.getElementById("imgid3").style.border = "5px solid #bbdefb";
@@ -119,7 +121,6 @@ Template.addNewTest.events({
 
     // Find the images where the company equals the selection
     var compimg = Advertisers.find( { company : strCompany } ).fetch();
-    console.log(compimg);
 
     // Push the path into array
     for( var i = 0; i < compimg.length; i++ ) {
@@ -141,52 +142,52 @@ Template.addNewTest.events({
     if(select1==true){
       var imgsrc = document.getElementById("imgid1").src;
       var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+      imgArray.push("/" + imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
     } else {};
     if(select2==true){
       var imgsrc = document.getElementById("imgid2").src;
       var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+      imgArray.push("/" + imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
     } else {};
     if(select3==true){
       var imgsrc = document.getElementById("imgid3").src;
       var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+      imgArray.push("/" + imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
     } else {};
     if(select4==true){
       var imgsrc = document.getElementById("imgid4").src;
       var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+      imgArray.push("/" + imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
     } else {};
     if(select5==true){
       var imgsrc = document.getElementById("imgid5").src;
       var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+      imgArray.push("/" + imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
     } else {};
     if(select6==true){
       var imgsrc = document.getElementById("imgid6").src;
       var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+      imgArray.push("/" + imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
     } else {};
     if(select7==true){
       var imgsrc = document.getElementById("imgid7").src;
       var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+      imgArray.push("/" + imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
     } else {};
     if(select8==true){
       var imgsrc = document.getElementById("imgid8").src;
       var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+      imgArray.push("/" + imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
     } else {};
     if(select9==true){
       var imgsrc = document.getElementById("imgid9").src;
       var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+      imgArray.push("/" + imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
     } else {};
     if(select10==true){
       var imgsrc = document.getElementById("imgid10").src;
       var imgsrcarray = imgsrc.split("/");
-      imgArray.push(imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
+      imgArray.push("/" + imgsrcarray[3] + "/" + imgsrcarray[4] + "/" + imgsrcarray[5] + "/" + imgsrcarray[6] + "/" + imgsrcarray[7]);
     } else {};
 
 
@@ -201,7 +202,7 @@ Template.addNewTest.events({
 
     // Push all relevant info into Tests collection
     var testCount = Tests.find().count() + 1;
-    Tests.insert( { testKey : testCount, text : prompt, company : strCompany, images : imgArray });
+    Tests.insert( { testKey : testCount, text : prompt, company : strCompany, images : imgArray, successes : 0, failures: 0, attempts: 0, price: 0 });
 
     location.reload();
   },

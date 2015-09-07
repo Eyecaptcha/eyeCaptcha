@@ -228,10 +228,10 @@ Template.eyecaptchaContainer.events({
 
 		var confirmPrompt = document.getElementById('promptBox').innerHTML;
 		var testID = Tests.findOne( { text : confirmPrompt } )['_id'];
-		
+
 		if((adImgCount == correctAdCount) && (freeImgCount == 0)) {
 			alert("The test was successfully completed!");
-			Tests.update( { _id : testID }, { $inc: { successes: 1, attempts: 1 } } );
+			Tests.update( { _id : testID }, { $inc: { successes: 1, attempts: 1, price: 0.25 } } );
 		} else {
 			alert("The test was failed.");
 			Tests.update( { _id : testID }, { $inc: { failures: 1, attempts: 1 } } );

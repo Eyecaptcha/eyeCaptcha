@@ -115,53 +115,27 @@
 <!-- Website template -->
 <template name="website">
 
-	{{#each websites}}
-		<div class="row">
-			<div class="col-md-12">
-				<h5 class="adName title">{{name}}</h5>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2 lineup">
-				Attempts:
-			</div>
-			<div class="col-md-2 lineup">
-				Solved:
-			</div>
-			<div class="col-md-2 lineup">
-				Failed:
-			</div>
-			<div class="col-md-2 lineup">
-				Success:
-			</div>
-			<div class="col-md-2 lineup">
-				Cost:
-			</div>
-			<div class="col-md-2 lineup">
-				Content:
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2 lineup">
-				{{attempts}}
-			</div>
-			<div class="col-md-2 lineup">
-				{{solved}}
-			</div>
-			<div class="col-md-2 lineup">
-				{{failed}}
-			</div>
-			<div class="col-md-2 lineup">
-				{{success}}%
-			</div>
-			<div class="col-md-2 lineup">
-				{{cost}}
-			</div>
-			<div class="col-md-2 lineup">
-				{{keywords}}
-			</div>
-		</div>
+	<div class="row adTableHead">
+		<div class="col-md-4 adTableCol"><h6>Company Name:</h6></div>
+		<div class="col-md-2 adTableCol"><h6>Solved Tests:</h6></div>
+		<div class="col-md-2 adTableCol"><h6>Failed Tests:</h6></div>
+		<div class="col-md-2 adTableCol"><h6>Total Tests:</h6></div>
+		<div class="col-md-2"><h6>Total Cost:</h6></div>
+	</div>
+	{{#each tests}}
+		{{> test}}
 	{{/each}}
+
+</template>
+<template name="test">
+
+	<div class="row adTableRow">
+		<div class="col-md-4 adContentCol"><h6>{{company}}</h6></div>
+		<div class="col-md-2 text-center adContentCol"><h6>{{successes}}</h6></div>
+		<div class="col-md-2 text-center adContentCol"><h6>{{failures}}</h6></div>
+		<div class="col-md-2 text-center adContentCol"><h6>{{attempts}}</h6></div>
+		<div class="col-md-2 text-center"><h6>${{price}}</h6></div>
+	</div>
 
 </template>
 
@@ -303,6 +277,7 @@
 	</form>
 
 </template>
+
 
 <template name="img1">
   <img class="imgs" id="imgid1" src="">
