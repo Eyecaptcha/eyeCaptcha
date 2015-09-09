@@ -84,3 +84,20 @@
 .adInfo {
   margin-bottom: 3%;
 }
+
+.webTableHead {
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  background-color: #f5f5f5;
+}
+.webTableCol {
+  border-right: 1px solid #ccc;
+}
+
+.webTableRow {
+  border-bottom: 1px solid #ddd;
+  background-color: #fefefe;
+}
+.webContentCol {
+  border-right: 1px solid #ddd;
+}

@@ -20,7 +20,7 @@
 				<div class="panel panel-default profit-panel">
 					<div class="panel-body">
 						<!--profit goes here.-->
-						<h4>Overall Profit: $12.00</h4>
+						<h4>Overall Profit: ${{totalprofit}}</h4>
 					</div>
 				</div>
 			</div>
@@ -38,7 +38,7 @@
 				</div>
 			</div>
 		</div>
-	
+
 <!-- Keywords -->
 		<div class="row">
 			<div class="col-md-12">
@@ -65,51 +65,26 @@
 
 <!-- Advertiser template -->
 <template name="advertiser">
-	{{#each advertisers}}
-		<div class="row">
-			<div class="col-md-12">
-				<h5 class="adName title">{{name}}</h5>
-			</div>
-		</div>
-<div class="row">
-			<div class="col-md-2 lineup">
-				Attempts:
-			</div>
-			<div class="col-md-2 lineup">
-				Solved:
-			</div>
-			<div class="col-md-2 lineup">
-				Failed:
-			</div>
-			<div class="col-md-2 lineup">
-				Success:
-			</div>
-			<div class="col-md-2 lineup">
-				Paying:
-			</div>
-			<div class="col-md-2 lineup">
-				Content:
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2 lineup">
-				{{attempts}}
-			</div>
-			<div class="col-md-2 lineup">
-				{{solved}}
-			</div>
-			<div class="col-md-2 lineup">
-				{{failed}}
-			</div>
-			<div class="col-md-2 lineup">
-				{{success}}%
-			</div>
-			<div class="col-md-2 lineup">
-				{{cost}}
-			</div>
-			<div class="col-md-2 lineup">
-				{{keywords}}
-			</div>
-		</div>
+	<div class="row webTableHead">
+		<div class="col-md-4 webTableCol"><h6>Advertiser Name:</h6></div>
+		<div class="col-md-2 webTableCol"><h6>Solved Tests:</h6></div>
+		<div class="col-md-2 webTableCol"><h6>Failed Tests:</h6></div>
+		<div class="col-md-2 webTableCol"><h6>Total Tests:</h6></div>
+		<div class="col-md-2"><h6>Total Profit:</h6></div>
+	</div>
+	{{#each ads}}
+		{{> ad}}
 	{{/each}}
+</template>
+
+<template name="ad">
+
+	<div class="row webTableRow">
+		<div class="col-md-4 webContentCol"><h6>{{company}}</h6></div>
+		<div class="col-md-2 text-center webContentCol"><h6>{{successes}}</h6></div>
+		<div class="col-md-2 text-center webContentCol"><h6>{{failures}}</h6></div>
+		<div class="col-md-2 text-center webContentCol"><h6>{{attempts}}</h6></div>
+		<div class="col-md-2 text-center"><h6>${{price}}</h6></div>
+	</div>
+
 </template>

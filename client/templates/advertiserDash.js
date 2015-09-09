@@ -6,12 +6,16 @@ Template.website.helpers({
     return Tests.find();
   }
 });
-Template.website.onRendered(function () {
-  var successCount = document.getElementsByClassName('successCount').innerHTML;
-  console.log(Number(successCount));
-  document.getElementsByClassName('costCalculator').innerHTML = successCount * .25;
+Template.advertiserDashContainer.helpers({
+  totalcost: function() {
+    var sum = 0;
+         var cursor = Tests.find( { } );
+         cursor.forEach(function(tests){
+           sum = sum + tests.price
+         });
+    return sum;
+  }
 });
-
 // Selected variables to allow select/deselect functionality for image buttons /
 var select1 = false;
 var select2 = false;
